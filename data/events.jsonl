@@ -83,3 +83,7 @@
 {"ts": "2026-11-03T17:45:13Z", "event": "rate_limited", "source": "rpc", "url": "https://api.mainnet-beta.solana.com"}
 {"ts": "2026-11-03T17:45:28Z", "event": "rate_limited", "source": "rpc", "url": "https://api.mainnet-beta.solana.com"}
 {"ts": "2026-11-03T17:45:58Z", "event": "rate_limited", "source": "rpc", "url": "https://api.mainnet-beta.solana.com"}
+{"ts": "2026-11-03T17:46:49Z", "event": "gap", "from": "2026-11-03T17:43:36Z", "to": "2026-11-03T17:46:49Z", "minutes": 3.2}
+{"ts": "2026-11-03T17:55:54Z", "event": "rate_limited", "source": "rpc", "url": "https://api.mainnet-beta.solana.com"}
+{"ts": "2026-11-03T17:56:10Z", "event": "rate_limited", "source": "rpc", "url": "https://api.mainnet-beta.solana.com"}
+{"ts": "2026-11-03T17:56:40Z", "event": "rate_limited", "source": "rpc", "url": "https://api.mainnet-beta.solana.com"}

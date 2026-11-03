@@ -49,6 +49,7 @@ CFG = {
     "max_top10_wallet_pct": 35.0,
     "chain_checks_per_step": 12,
     "chain_retry_steps": 2,
+    "rpc_holders": False,   # free RPCs refuse getTokenLargestAccounts; use pool trades instead
     # exits (all books)
     "stop_pct": -35.0,
     "tp_mult": 2.0,
@@ -224,12 +225,19 @@ def holders_from_trades(p, supply, st):
     d = http_json(f"{GT}/networks/solana/pools/{p['pool']}/trades", st=st)
     rows = (d or {}).get("data")
     if rows is None or supply <= 0: return None
-    net = {}
+    net = {}; matched = 0
     for r in rows:
         a = r.get("attributes", {}); w = a.get("tx_from_address")
         if not w: continue
-        if a.get("to_token_address") == p["mint"]: net[w] = net.get(w, 0) + f(a.get("to_token_amount"))
-        elif a.get("from_token_address") == p["mint"]: net[w] = net.get(w, 0) - f(a.get("from_token_amount"))
+        if a.get("to_token_address") == p["mint"]: net[w] = net.get(w, 0) + f(a.get("to_token_amount")); matched += 1
+        elif a.get("from_token_address") == p["mint"]: net[w] = net.get(w, 0) - f(a.get("from_token_amount")); matched += 1
+    if rows and not matched:
+        if st["counts"].get("trades_unmatched", 0) < 5:
+            a = rows[0].get("attributes", {})
+            log("events.jsonl", {"event": "trades_unmatched", "pool": p["pool"], "mint": p["mint"],
+                                 "keys": sorted(a.keys())[:40], "from_token": a.get("from_token_address"), "to_token": a.get("to_token_address")})
+        bump(st["counts"], "trades_unmatched")
+        return None
     bal = sorted((v for v in net.values() if v > 0), reverse=True)
     return 100 * (bal[0] if bal else 0) / supply, 100 * sum(bal[:10]) / supply, len(rows)
 
@@ -243,7 +251,7 @@ def chain_check(p, st):
     ok = {"authorities_ok": True}
     supply = f(info.get("supply")) / (10 ** int(info.get("decimals", 0)))
     ok["supply"] = supply
-    largest = rpc("getTokenLargestAccounts", [p["mint"]], st)
+    largest = rpc("getTokenLargestAccounts", [p["mint"]], st) if CFG["rpc_holders"] else None
     holders = (largest or {}).get("value") or []
     if not holders or supply <= 0:
         h = holders_from_trades(p, supply, st)

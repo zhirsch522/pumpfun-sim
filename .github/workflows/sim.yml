@@ -1,0 +1,37 @@
+name: pumpfun paper sim
+# Paper only: reads public market data, writes journal files, never trades.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"   # backup in case a self-restart is missed
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: sim
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - name: Skip if finished
+        id: chk
+        run: |
+          if [ -f data/state.json ] && python3 -c "import json,sys;sys.exit(0 if json.load(open('data/state.json')).get('done') else 1)"; then echo done=1 >> $GITHUB_OUTPUT; else echo done=0 >> $GITHUB_OUTPUT; fi
+      - name: Run sim (about 5.5h per job, resumes from data/)
+        if: steps.chk.outputs.done == '0'
+        env:
+          SIM_GIT_COMMIT: "1"
+        run: |
+          git config user.name "paper-sim"; git config user.email "paper-sim@users.noreply.github.com"
+          python3 sim.py run --minutes 330
+          python3 summarize.py || true
+          git add -A data; git commit -qm "summary" || true; git pull -q --rebase || true; git push -q || true
+      - name: Start next job
+        if: steps.chk.outputs.done == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! python3 -c "import json,sys;sys.exit(0 if json.load(open('data/state.json')).get('done') else 1)"; then gh workflow run sim.yml --ref ${{ github.ref_name }}; else gh workflow disable sim.yml || true; fi

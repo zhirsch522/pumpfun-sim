@@ -39,6 +39,33 @@ def hold_for(rows, minutes):
         if exit_px: out.append(ret_pct(e, exit_px))
     return out
 
+WALLET_START = 20.0
+WALLET_RISK = 0.25   # each paper trade stakes 25% of the wallet's current value (max 3 open = up to 75% in)
+
+def wallet_replay(alltr, book):
+    """Replays one book's logged trades as a $20 wallet that sizes each trade at 25% of its value.
+    Each trade keeps its logged return (fees and slippage included); open stakes are marked at cost."""
+    events = []
+    entries = {}
+    for t in alltr:
+        if t.get("book") != book: continue
+        if t.get("event") == "entry": entries.setdefault(t["pool"], []).append(t["ts"]); events.append((t["ts"], 0, t["pool"], None))
+        elif t.get("event") == "exit": events.append((t["ts"], 1, t["pool"], t["proceeds"] / t["cost"] if t["cost"] else 0))
+    events.sort()
+    cash, open_, peak, max_dd, n = WALLET_START, {}, WALLET_START, 0.0, 0
+    for ts, kind, pool, mult in events:
+        if kind == 0:
+            stake = min(cash, WALLET_RISK * (cash + sum(open_.values())))
+            if stake <= 0.01: continue
+            cash -= stake; open_[pool] = stake; n += 1
+        elif pool in open_:
+            cash += open_.pop(pool) * mult
+        eq = cash + sum(open_.values())
+        peak = max(peak, eq); max_dd = max(max_dd, 1 - eq / peak if peak else 0)
+    end = cash + sum(open_.values())
+    return {"start": WALLET_START, "end": round(end, 2), "return_pct": round(100 * (end / WALLET_START - 1), 1),
+            "max_drawdown_pct": round(100 * max_dd, 1), "trades": n, "stake_pct": int(WALLET_RISK * 100)}
+
 def main():
     st = sim.load_state(); rng = random.Random(42)
     alltr = jl("trades.jsonl")
@@ -63,6 +90,7 @@ def main():
             "closed_trades": stats([t["pnl_pct"] for t in bt]),
             "rules_on_all_its_survivors": stats([s["rule_exit"]["pnl_pct"] for s in mine if "rule_exit" in s]),
             "random_hold_on_its_survivors": stats(random_hold(mine, "entry_px", "samples", rng)),
+            "wallet_20": wallet_replay(alltr, b),
             "exit_reasons": {r: sum(t["reason"] == r for t in bt) for r in {t["reason"] for t in bt}},
             "best": bt[-3:][::-1], "worst": bt[:3]}
     out["all_launch_sample"] = {
@@ -78,6 +106,7 @@ def main():
         kills = {k[5:]: v for k, v in r["counts"].items() if k.startswith("kill:")}
         L += [f"## {b}", f"- Paper P&L ${r['pnl_usd']} ({r['pnl_pct']}%), survivors {r['counts'].get('survivor', 0)}, trades {r['counts'].get('trade', 0)} (holder check unavailable on {r['entries_holder_check_unknown']}), open {r['open']}",
               "- Kills: " + ", ".join(f"{k} {v}" for k, v in sorted(kills.items(), key=lambda x: -x[1])),
+              f"- $20 wallet, {r['wallet_20']['stake_pct']}% of wallet per trade: ends ${r['wallet_20']['end']} ({r['wallet_20']['return_pct']}%), worst drawdown {r['wallet_20']['max_drawdown_pct']}%",
               f"- Closed trades {r['closed_trades']}", f"- Rules on every survivor {r['rules_on_all_its_survivors']}",
               f"- Random hold on its survivors {r['random_hold_on_its_survivors']}", f"- Exits {r['exit_reasons']}",
               "- Best: " + "; ".join(f"{t['name']} {t['pnl_pct']}% ({t['reason']})" for t in r["best"]),

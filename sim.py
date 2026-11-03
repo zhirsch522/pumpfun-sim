@@ -435,6 +435,12 @@ def archive_shadows(st):
         with open(path("shadows_done.jsonl"), "a") as fh: fh.write(json.dumps({"pool_key": k, **st["shadows"][k]}) + "\n")
         del st["shadows"][k]
 
+def run_hours():
+    """Run length in hours; a number in data/run_hours.txt overrides the default (git pull'd each commit)."""
+    try:
+        with open(path("run_hours.txt")) as fh: return max(1.0, min(120.0, float(fh.read().strip())))
+    except (FileNotFoundError, ValueError): return CFG["run_hours"]
+
 def commit(msg):
     if not os.environ.get("SIM_GIT_COMMIT"): return
     try:
@@ -496,12 +502,15 @@ def run(minutes):
         st["started"] = now(); log("events.jsonl", {"event": "start", "cfg": CFG, "books": BOOKS, "rpcs": RPCS})
     if st.get("done"):
         print("run already finished"); return 0
-    end_run = st["started"] + CFG["run_hours"] * 3600
-    stop_at = min(now() + minutes * 60, end_run)
-    log("events.jsonl", {"event": "session_start", "until": iso(stop_at)})
+    session_end = now() + minutes * 60
+    end_run = st["started"] + run_hours() * 3600
+    stop_at = min(session_end, end_run)
+    log("events.jsonl", {"event": "session_start", "until": iso(stop_at), "run_hours": run_hours()})
     last_commit = now()
     while now() < stop_at:
         t0 = now()
+        end_run = st["started"] + run_hours() * 3600   # data/run_hours.txt can extend a live run
+        stop_at = min(session_end, end_run)
         try: step(st)
         except Exception as e: log("events.jsonl", {"event": "error", "err": repr(e)[:300]})
         save_state(st)

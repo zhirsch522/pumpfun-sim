@@ -41,7 +41,11 @@ def hold_for(rows, minutes):
 
 def main():
     st = sim.load_state(); rng = random.Random(42)
-    trades = [t for t in jl("trades.jsonl") if t.get("event") == "exit"]
+    alltr = jl("trades.jsonl")
+    trades = [t for t in alltr if t.get("event") == "exit"]
+    unknown = {}
+    for t in alltr:
+        if t.get("event") == "entry" and t.get("holders") == "unknown": unknown[t["book"]] = unknown.get(t["book"], 0) + 1
     shadows = list(st["shadows"].values()) + jl("shadows_done.jsonl")
     samples = list(st["samples"].values()) + jl("samples_done.jsonl")
     elapsed_h = ((st["last_poll"] or 0) - (st["started"] or 0)) / 3600 if st["started"] else 0
@@ -55,7 +59,7 @@ def main():
         mine = [s for s in shadows if b in (s.get("books") or [])]
         out["books"][b] = {
             "pnl_usd": round(equity - C["account_usd"], 2), "pnl_pct": round(100 * (equity / C["account_usd"] - 1), 2),
-            "open": len(bk["open"]), "counts": bk["counts"],
+            "open": len(bk["open"]), "counts": bk["counts"], "entries_holder_check_unknown": unknown.get(b, 0),
             "closed_trades": stats([t["pnl_pct"] for t in bt]),
             "rules_on_all_its_survivors": stats([s["rule_exit"]["pnl_pct"] for s in mine if "rule_exit" in s]),
             "random_hold_on_its_survivors": stats(random_hold(mine, "entry_px", "samples", rng)),
@@ -72,7 +76,7 @@ def main():
          f"- All-launch baseline (1 in {C['sample_one_in']} launches, bought at 10 min old): random exit {out['all_launch_sample']['random_exit_within_3h']}, hold 1h {out['all_launch_sample']['hold_1h']}, hold 3h {out['all_launch_sample']['hold_3h']}", ""]
     for b, r in out["books"].items():
         kills = {k[5:]: v for k, v in r["counts"].items() if k.startswith("kill:")}
-        L += [f"## {b}", f"- Paper P&L ${r['pnl_usd']} ({r['pnl_pct']}%), survivors {r['counts'].get('survivor', 0)}, trades {r['counts'].get('trade', 0)}, open {r['open']}",
+        L += [f"## {b}", f"- Paper P&L ${r['pnl_usd']} ({r['pnl_pct']}%), survivors {r['counts'].get('survivor', 0)}, trades {r['counts'].get('trade', 0)} (holder check unavailable on {r['entries_holder_check_unknown']}), open {r['open']}",
               "- Kills: " + ", ".join(f"{k} {v}" for k, v in sorted(kills.items(), key=lambda x: -x[1])),
               f"- Closed trades {r['closed_trades']}", f"- Rules on every survivor {r['rules_on_all_its_survivors']}",
               f"- Random hold on its survivors {r['random_hold_on_its_survivors']}", f"- Exits {r['exit_reasons']}",

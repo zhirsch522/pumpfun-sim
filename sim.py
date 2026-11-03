@@ -22,7 +22,7 @@ from datetime import datetime, timezone
 
 DATA_DIR = os.environ.get("SIM_DATA_DIR", os.path.join(os.path.dirname(os.path.abspath(__file__)), "data"))
 GT = "https://api.geckoterminal.com/api/v2"
-RPCS = [u for u in os.environ.get("SIM_RPCS", "https://solana-rpc.publicnode.com,https://api.mainnet-beta.solana.com").split(",") if u]
+RPCS = [u for u in os.environ.get("SIM_RPCS", "https://solana-rpc.publicnode.com,https://solana.drpc.org,https://api.mainnet-beta.solana.com").split(",") if u]
 SYSTEM_PROGRAM = "11111111111111111111111111111111"
 
 BOOKS = {
@@ -132,12 +132,19 @@ def http_json(url, body=None, st=None, kind="gt", tries=2):
     return None
 
 def rpc(method, params, st):
-    """Try each free RPC once; no long sleeps so the main loop never stalls."""
-    for ep in RPCS:
+    """Try each free RPC once, healthiest first; no long sleeps so the main loop never stalls."""
+    health = st.setdefault("rpc_ok", {})
+    order = sorted(RPCS, key=lambda ep: -health.get(ep.split("/")[2] + ":" + method, 0))
+    for ep in order:
+        key = ep.split("/")[2] + ":" + method
         r = http_json(ep, {"jsonrpc": "2.0", "id": 1, "method": method, "params": params}, st, kind="rpc", tries=1)
         time.sleep(0.25)
-        if r and "result" in r: return r["result"]
-        bump(st["rpc_fail"], ep.split("/")[2] + ":" + method)
+        if r and "result" in r:
+            health[key] = min(health.get(key, 0) + 1, 20); return r["result"]
+        health[key] = health.get(key, 0) - 1
+        bump(st["rpc_fail"], key)
+        if r and "error" in r and st["rpc_fail"][key] <= 5:
+            log("events.jsonl", {"event": "rpc_error", "host": ep.split("/")[2], "method": method, "error": str(r["error"])[:200]})
     return None
 
 # ---------- data parsing ----------
@@ -213,20 +220,21 @@ def chain_check(p, st):
     if not info: return "retry", {}
     if info.get("mintAuthority"): return "mint_authority_set", {}
     if info.get("freezeAuthority"): return "freeze_authority_set", {}
+    ok = {"authorities_ok": True}
     supply = f(info.get("supply")) / (10 ** int(info.get("decimals", 0)))
     largest = rpc("getTokenLargestAccounts", [p["mint"]], st)
     holders = (largest or {}).get("value") or []
-    if not holders or supply <= 0: return "retry", {}
+    if not holders or supply <= 0: return "retry", ok
     tas = [h["address"] for h in holders]
     ta_info = rpc("getMultipleAccounts", [tas, {"encoding": "jsonParsed"}], st)
-    if not ta_info: return "retry", {}
+    if not ta_info: return "retry", ok
     owners = []
     for h, a in zip(holders, ta_info.get("value") or []):
         own = ((((a or {}).get("data") or {}).get("parsed") or {}).get("info") or {}).get("owner")
         owners.append((own, f(h.get("uiAmount"))))
     uniq = list(dict.fromkeys(o for o, _ in owners if o))
     oi = rpc("getMultipleAccounts", [uniq, {"encoding": "base64", "dataSlice": {"offset": 0, "length": 0}}], st) if uniq else None
-    if uniq and not oi: return "retry", {}
+    if uniq and not oi: return "retry", ok
     prog_owned = set()
     for o, a in zip(uniq, (oi or {}).get("value") or []):
         if o == p["pool"] or (a and a.get("owner") != SYSTEM_PROGRAM): prog_owned.add(o)
@@ -341,7 +349,12 @@ def chain_stage(st):
         if reason == "retry":
             item["tries"] += 1
             if item["tries"] <= CFG["chain_retry_steps"]: continue
-            reason = "holders_unreadable"
+            # Authorities are read first; if even those failed we can't vouch for the coin.
+            if not info.get("authorities_ok"):
+                reason = "chain_unreadable"
+            else:
+                reason, info = None, {**info, "holders": "unknown"}
+                bump(st["counts"], "holders_unknown_pass")
         st["chain_cache"][p["mint"]] = [reason, info]
         del st["chainq"][pool]
         rec = {**market_rec(p), **info, "stage": "chain", "books": item["want"]}

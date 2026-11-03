@@ -124,10 +124,14 @@ def http_json(url, body=None, st=None, kind="gt", tries=2):
                 log("events.jsonl", {"event": "rate_limited", "source": kind, "host": url.split("/")[2]})
                 if kind == "rpc": return None
                 time.sleep(10 * (i + 1)); continue
+            if kind == "rpc":
+                log("events.jsonl", {"event": "rpc_http_error", "host": url.split("/")[2], "code": e.code}); return None
             if e.code == 404: return None
             time.sleep(2)
-        except Exception:
+        except Exception as e:
             if st: st["calls"]["err"] += 1
+            if kind == "rpc":
+                log("events.jsonl", {"event": "rpc_exception", "host": url.split("/")[2], "err": repr(e)[:120]}); return None
             time.sleep(2)
     return None
 
@@ -213,6 +217,22 @@ def free_kill(p, c):
     if p["pc_m5"] < c["min_pc_m5"]: return "dumping_m5"
     return None
 
+def holders_from_trades(p, supply, st):
+    """Fallback holder check: net tokens bought per wallet from the pool's recent trades
+    (GeckoTerminal, up to 300). Pool/curve accounts never appear as traders, so they are
+    excluded by construction. Returns (top1_pct, top10_pct, n_trades) or None."""
+    d = http_json(f"{GT}/networks/solana/pools/{p['pool']}/trades", st=st)
+    rows = (d or {}).get("data")
+    if rows is None or supply <= 0: return None
+    net = {}
+    for r in rows:
+        a = r.get("attributes", {}); w = a.get("tx_from_address")
+        if not w: continue
+        if a.get("to_token_address") == p["mint"]: net[w] = net.get(w, 0) + f(a.get("to_token_amount"))
+        elif a.get("from_token_address") == p["mint"]: net[w] = net.get(w, 0) - f(a.get("from_token_amount"))
+    bal = sorted((v for v in net.values() if v > 0), reverse=True)
+    return 100 * (bal[0] if bal else 0) / supply, 100 * sum(bal[:10]) / supply, len(rows)
+
 def chain_check(p, st):
     """Returns (kill_reason or None, info). None reason with info {} never happens; 'retry' means RPC failed."""
     acc = rpc("getAccountInfo", [p["mint"], {"encoding": "jsonParsed"}], st)
@@ -222,9 +242,17 @@ def chain_check(p, st):
     if info.get("freezeAuthority"): return "freeze_authority_set", {}
     ok = {"authorities_ok": True}
     supply = f(info.get("supply")) / (10 ** int(info.get("decimals", 0)))
+    ok["supply"] = supply
     largest = rpc("getTokenLargestAccounts", [p["mint"]], st)
     holders = (largest or {}).get("value") or []
-    if not holders or supply <= 0: return "retry", ok
+    if not holders or supply <= 0:
+        h = holders_from_trades(p, supply, st)
+        if h is None: return "retry", ok
+        top1, top10, n = h
+        info = {"top1_pct": round(top1, 2), "top10_pct": round(top10, 2), "holders_source": "trades", "trades_seen": n}
+        if top1 > CFG["max_top1_wallet_pct"]: return "whale_wallet", info
+        if top10 > CFG["max_top10_wallet_pct"]: return "concentrated_top10", info
+        return None, info
     tas = [h["address"] for h in holders]
     ta_info = rpc("getMultipleAccounts", [tas, {"encoding": "jsonParsed"}], st)
     if not ta_info: return "retry", ok

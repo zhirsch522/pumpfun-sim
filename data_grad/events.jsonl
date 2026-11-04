@@ -11,3 +11,11 @@
 {"ts": "2026-11-04T13:07:48Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
 {"ts": "2026-11-04T13:08:12Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
 {"ts": "2026-11-04T13:10:12Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:14:56Z", "event": "session_start", "until": "2026-11-04T18:44:56Z", "run_hours": 24}
+{"ts": "2026-11-04T13:15:56Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:16:11Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:17:11Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:22:16Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:23:06Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:25:11Z", "event": "price_glitch", "book": "loose", "pool": "JNfENFYY8SVL4o2ffy7ogEZp2RpqzvR44YGRJ3RVUBY", "last_px": 1.448315494374058e-05, "px": 0.21624524613519383, "liq": 19205.6702, "mcap": 14882.19558, "vol_m5": 84983.8173133031}
+{"ts": "2026-11-04T13:25:11Z", "event": "price_glitch", "book": "shadow", "pool": "JNfENFYY8SVL4o2ffy7ogEZp2RpqzvR44YGRJ3RVUBY", "last_px": 1.448315494374058e-05, "px": 0.21624524613519383, "liq": 19205.6702, "mcap": 14882.19558, "vol_m5": 84983.8173133031}

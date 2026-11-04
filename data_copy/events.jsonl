@@ -1222,3 +1222,4 @@
 {"ts": "2026-11-04T18:46:23Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
 {"ts": "2026-11-04T18:46:43Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
 {"ts": "2026-11-04T18:46:55Z", "event": "session_end"}
+{"ts": "2026-11-04T18:46:58Z", "event": "wallets_saved", "wallets": 18023, "leaders": 33}

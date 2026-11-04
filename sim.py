@@ -93,7 +93,7 @@ if MODE == "grad":
                 "trail_arm_mult": 1.5, "trail_drop": 0.30, "sample_one_in": 2, "sample_hours": 6})
 elif MODE == "copy":
     BOOKS = {"leaders": None, "random_wallet": None}
-    CFG.update({"gt_min_gap_s": 5.0, "poll_s": 75, "max_hold_h": 6, "trail_arm_mult": 1.5, "trail_drop": 0.30, "eval_max_age_min": 120})
+    CFG.update({"gt_min_gap_s": 8.0, "poll_s": 90, "max_hold_h": 6, "trail_arm_mult": 1.5, "trail_drop": 0.30, "eval_max_age_min": 120})
 
 def now(): return time.time()
 def iso(t=None): return datetime.fromtimestamp(now() if t is None else t, timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")

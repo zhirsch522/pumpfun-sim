@@ -25,7 +25,7 @@ from sim import CFG, GT, now, iso, log, bump, f, http_json, fetch_new, fetch_poo
 CC = {
     "hot_min_age_min": 10, "hot_recheck_min": 10, "hot_watch_max_age_min": 60,
     "hot_min_vol_h1": 5000, "hot_min_trades_h1": 50, "hot_hours": 3, "max_hot": 30,
-    "trades_calls_per_step": 6, "trades_min_usd": 20,
+    "trades_calls_per_step": 4, "trades_min_usd": 20,
     "min_copy_usd": 50, "max_signal_age_s": 600,
     "leader_min_mints": 3, "leader_max_mints": 60, "leader_min_pnl_usd": 100.0,
     "leader_min_winrate": 0.6, "leader_min_hold_s": 60,

@@ -16,6 +16,8 @@ jobs:
     timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}   # branch tip, not the commit the run was queued at (queued runs were resuming stale data)
       - name: Skip if finished
         id: chk
         run: |
@@ -26,6 +28,7 @@ jobs:
           SIM_GIT_COMMIT: "1"
         run: |
           git config user.name "paper-sim"; git config user.email "paper-sim@users.noreply.github.com"
+          git pull -q --rebase origin ${{ github.ref_name }} || true
           python3 sim.py run --minutes 330
           python3 summarize.py || true
           git add -A data; git commit -qm "summary" || true; git pull -q --rebase || true; git push -q || true

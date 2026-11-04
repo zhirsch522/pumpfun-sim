@@ -57,6 +57,8 @@ CFG = {
     "fade_ratio": 0.25,
     "max_hold_h": 24,
     "no_price_polls": 3,
+    "glitch_jump": 50.0,   # one-poll jump this big = dead/rugged pool with a garbage quote; valued at 0
+    "suspect_jump": 10.0,  # one-poll jump this big is held as suspect; dead if the quote then freezes or collapses
     # survivor shadows
     "shadow_hours": 6,
     "shadow_sample_min": 2,
@@ -315,6 +317,21 @@ def close(st, holder, key, px, reason, book, frac=1.0):
     if shadow: pos["rule_exit"] = rec  # keep sampling prices for the baseline
     else: del holder[key]
 
+def spike_check(obj, px):
+    """Rugged pools often report a garbage quote: a sudden huge jump that then freezes or drops to ~0.
+    Returns 'ok' (use px), 'hold' (suspect, skip this quote) or 'dead' (value the position at 0)."""
+    sus = obj.get("suspect")
+    if sus:
+        if px == sus["px"] or px < 0.01 * sus["prev"]:
+            sus["n"] += 1
+            return "dead" if sus["n"] >= 2 else "hold"
+        obj.pop("suspect"); return "ok"
+    last = obj.get("last_px")
+    if last and px >= CFG["glitch_jump"] * last: return "dead"
+    if last and px >= CFG["suspect_jump"] * last:
+        obj["suspect"] = {"px": px, "prev": last, "n": 0}; return "hold"
+    return "ok"
+
 def manage(st, holder, book, quotes):
     shadow = book == "shadow"
     for key in list(holder.keys()):
@@ -333,6 +350,16 @@ def manage(st, holder, book, quotes):
             if pos["miss"] >= CFG["no_price_polls"]:
                 if "rule_exit" not in pos: close(st, holder, key, pos["last_px"], "no_price", book)
                 if shadow: pos["ended"] = True
+            continue
+        verdict = spike_check(pos, q["price"])
+        if verdict == "hold": pos["miss"] = 0; continue
+        if verdict == "dead":
+            bump(st["counts"], "dead_pool_glitch")
+            if st["counts"]["dead_pool_glitch"] <= 30:
+                log("events.jsonl", {"event": "price_glitch", "book": book, "pool": pos["pool"], "last_px": pos["last_px"],
+                                     "px": q["price"], "liq": q["liq"], "mcap": q["mcap"], "vol_m5": q["vol_m5"]})
+            if shadow: pos["samples"].append([round(now()), 0.0]); pos["ended"] = True
+            if "rule_exit" not in pos: close(st, holder, key, 0.0, "dead_pool", book)
             continue
         pos["miss"] = 0; px = q["price"]; pos["last_px"] = px; pos["peak_px"] = max(pos["peak_px"], px)
         if shadow and now() - pos["last_sample"] >= CFG["shadow_sample_min"] * 60:
@@ -419,7 +446,11 @@ def sample_tick(st, due, quotes):
         s = st["samples"].get(pool)
         if s is None: continue
         q = quotes.get(pool)
-        if q and q["price"] > 0:
+        v = spike_check(s, q["price"]) if (q and q["price"] > 0 and s.get("entry_px") and not s.get("dead")) else "ok"
+        if s.get("dead") or v == "hold": pass
+        elif v == "dead":
+            s["path"].append([round(t), 0.0]); s["dead"] = True; s["created"] = 0  # dead pool: record 0 and archive
+        elif q and q["price"] > 0:
             if s["entry_px"] is None:
                 s["entry_px"] = q["price"]; s["entry_t"] = t; s["entry_liq"] = q["liq"]
             s["path"].append([round(t), q["price"]]); s["last_px"] = q["price"]

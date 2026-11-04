@@ -110,9 +110,9 @@ def wallet_replay(alltr, book, exits):
 def main():
     st = sim.load_state(); rng = random.Random(42)
     alltr = jl("trades.jsonl")
-    trades = correct_exits(alltr)
+    trades = correct_exits(alltr) if sim.MODE == "fresh" else [t for t in alltr if t.get("event") == "exit"]  # later modes guard live
     n_glitch = sum(1 for t in trades if t.get("glitch_corrected"))
-    shadow_rows = correct_exits(jl("shadow.jsonl"))
+    shadow_rows = correct_exits(jl("shadow.jsonl")) if sim.MODE == "fresh" else []
     shadow_partials = {}
     for r in jl("shadow.jsonl"):
         if r.get("event") == "partial_exit": shadow_partials.setdefault(r["pool"], []).append(r)
@@ -157,11 +157,22 @@ def main():
         "random_exit_within_3h": stats(random_hold(samples, "entry_px", "path", rng)),
         "hold_1h": stats(hold_for(samples, 60)), "hold_3h": stats(hold_for(samples, 180))}
     with open(os.path.join(D, "summary.json"), "w") as fh: json.dump(out, fh, indent=2)
-    L = ["# pump.fun paper sim summary (v2)", "",
+    L = [f"# pump.fun paper sim summary ({sim.MODE})", "",
          f"- Window: {out['started']}, {out['hours_covered']}h covered, gaps {out['gap_minutes']} min, finished: {out['done']}",
          f"- Dead/rugged pools with garbage post-rug prices: {n_glitch} logged exits re-valued at 0 (live guard added Nov 4): a one-poll jump of {G:g}x, or {J:g}x that then freezes or collapses",
          f"- Launches seen {st['counts'].get('launches_seen', 0)}, evaluated {st['counts'].get('evaluated', 0)}, missed (too old when first seen) {st['counts'].get('missed_too_old', 0)}",
-         f"- All-launch baseline (1 in {C['sample_one_in']} launches, bought at 10 min old): random exit {out['all_launch_sample']['random_exit_within_3h']}, hold 1h {out['all_launch_sample']['hold_1h']}, hold 3h {out['all_launch_sample']['hold_3h']}", ""]
+         f"- All-launch baseline (1 in {C['sample_one_in']} launches, bought at {C['eval_min_age_min']} min old): random exit {out['all_launch_sample']['random_exit_within_3h']}, hold 1h {out['all_launch_sample']['hold_1h']}, hold 3h {out['all_launch_sample']['hold_3h']}", ""]
+    if sim.MODE == "copy":
+        ents = [t for t in alltr if t.get("event") == "entry"]
+        lags = [t["lag_s"] for t in ents if t.get("lag_s") is not None]
+        saved = [e for e in jl("events.jsonl") if e.get("event") == "wallets_saved"]
+        out["copy"] = {"signals": {k[7:]: v for k, v in st["counts"].items() if k.startswith("signal:")},
+                       "median_lag_s": statistics.median(lags) if lags else None, "hot_pools_added": st["counts"].get("hot_added", 0),
+                       "trades_read": st["counts"].get("trades_read", 0), "wallets_last_save": saved[-1] if saved else None}
+        L.insert(5, f"- Copy: signals {out['copy']['signals']}, median delay from their buy to our paper buy {out['copy']['median_lag_s']}s, "
+                    f"hot coins watched {out['copy']['hot_pools_added']}, trades read {out['copy']['trades_read']}, last wallet save {out['copy']['wallets_last_save']}")
+        L = [l for l in L if not l.startswith("- All-launch baseline")]
+        with open(os.path.join(D, "summary.json"), "w") as fh: json.dump(out, fh, indent=2)
     for b, r in out["books"].items():
         kills = {k[5:]: v for k, v in r["counts"].items() if k.startswith("kill:")}
         L += [f"## {b}", f"- Paper P&L ${r['pnl_usd']} ({r['pnl_pct']}%), survivors {r['counts'].get('survivor', 0)}, trades {r['counts'].get('trade', 0)} (holder check unavailable on {r['entries_holder_check_unknown']}), open {r['open']}",

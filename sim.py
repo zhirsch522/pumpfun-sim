@@ -75,6 +75,26 @@ CFG = {
     "commit_every_min": 10,
 }
 
+# ---------- modes ----------
+# fresh: every new pump.fun launch (v2, Nov 3-4). grad: only coins that graduated to PumpSwap, momentum entries.
+# copy: copytrade.py mirrors wallets with a good live track record (uses this module's plumbing).
+MODE = os.environ.get("SIM_MODE", "fresh")
+if MODE == "grad":
+    BOOKS = {
+        "momo":  {"min_liq_usd": 15000, "min_mcap_usd": 30000, "max_mcap_usd": 5000000, "min_vol_h1_usd": 20000,
+                  "min_trades_h1": 150, "min_buyers_h1": 80, "max_sell_buy_h1": 1.0, "max_sell_buy_m5": 1.2,
+                  "min_pc_m5": 0.0, "min_pc_h1": 10.0},
+        "loose": {"min_liq_usd": 8000, "min_mcap_usd": 15000, "max_mcap_usd": 5000000, "min_vol_h1_usd": 10000,
+                  "min_trades_h1": 60, "min_buyers_h1": 40, "max_sell_buy_h1": 1.2, "max_sell_buy_m5": 1.5,
+                  "min_pc_m5": -10.0},
+        "any": None,   # chain checks only
+    }
+    CFG.update({"version": 2, "eval_min_age_min": 15, "eval_max_age_min": 45, "stop_pct": -25.0, "max_hold_h": 12,
+                "trail_arm_mult": 1.5, "trail_drop": 0.30, "sample_one_in": 2, "sample_hours": 6})
+elif MODE == "copy":
+    BOOKS = {"leaders": None, "random_wallet": None}
+    CFG.update({"max_hold_h": 6, "trail_arm_mult": 1.5, "trail_drop": 0.30, "eval_max_age_min": 120})
+
 def now(): return time.time()
 def iso(t=None): return datetime.fromtimestamp(now() if t is None else t, timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 def f(x, d=0.0):
@@ -174,10 +194,12 @@ def parse_pool(p):
         "vol_m5": f(vol.get("m5")), "vol_h1": f(vol.get("h1")),
         "buys_h1": int(f(h1.get("buys"))), "sells_h1": int(f(h1.get("sells"))), "buyers_h1": int(f(h1.get("buyers"))),
         "buys_m5": int(f(m5.get("buys"))), "sells_m5": int(f(m5.get("sells"))),
-        "pc_m5": f(pc.get("m5")),
+        "pc_m5": f(pc.get("m5")), "pc_h1": f(pc.get("h1")),
     }
 
-def is_pump(dex): return "pump" in (dex or "").lower()
+def is_pump(dex):
+    d = (dex or "").lower()
+    return d == "pumpswap" if MODE == "grad" else "pump" in d
 
 def fetch_new(st):
     """Page through new pools until we reach ones we've already seen (max_pages)."""
@@ -218,6 +240,7 @@ def free_kill(p, c):
     if p["sells_h1"] > c["max_sell_buy_h1"] * max(p["buys_h1"], 1): return "sell_heavy_h1"
     if p["sells_m5"] > c["max_sell_buy_m5"] * max(p["buys_m5"], 1): return "sell_heavy_m5"
     if p["pc_m5"] < c["min_pc_m5"]: return "dumping_m5"
+    if p["pc_h1"] < c.get("min_pc_h1", -1e9): return "no_momentum_h1"
     return None
 
 def holders_from_trades(p, supply, st):
@@ -367,6 +390,8 @@ def manage(st, holder, book, quotes):
         if "rule_exit" in pos: continue
         held_min = (now() - pos["entry_t"]) / 60
         if 100 * (px / pos["entry_px"] - 1) <= CFG["stop_pct"]: close(st, holder, key, px, "stop_loss", book); continue
+        if CFG.get("trail_arm_mult") and pos["peak_px"] >= CFG["trail_arm_mult"] * pos["entry_px"] and px <= (1 - CFG["trail_drop"]) * pos["peak_px"]:
+            close(st, holder, key, px, "trail_stop", book); continue
         if not pos["half_taken"] and px >= CFG["tp_mult"] * pos["entry_px"]:
             close(st, holder, key, px, "take_half_2x", book, frac=0.5); pos["half_taken"] = True
         if held_min >= CFG["fade_after_min"] and q["vol_m5"] <= 0:  # nobody trading it (entry m5 volume was 0 too, so the fade rule never fired)
@@ -391,10 +416,11 @@ def free_stage(st, p):
     for b, r in verdict.items():
         if r: bump(st["books"][b]["counts"], "kill:" + r)
     market_pass = [b for b, r in verdict.items() if not r and BOOKS[b] is not None]
-    rug_queued = sum(1 for it in st["chainq"].values() if "rugonly" in it["want"])
-    rug_wants = verdict["rugonly"] is None and len(st["books"]["rugonly"]["open"]) + rug_queued < CFG["max_open"]
-    if verdict["rugonly"] is None and not rug_wants: bump(st["books"]["rugonly"]["counts"], "not_checked_book_full")
-    want = market_pass + (["rugonly"] if rug_wants else [])
+    want = list(market_pass)
+    for rb in [b for b, c in BOOKS.items() if c is None and verdict[b] is None]:   # chain-check-only books: queue only while they have a free slot
+        rug_queued = sum(1 for it in st["chainq"].values() if rb in it["want"])
+        if len(st["books"][rb]["open"]) + rug_queued < CFG["max_open"]: want.append(rb)
+        else: bump(st["books"][rb]["counts"], "not_checked_book_full")
     log("decisions.jsonl", {**rec, "stage": "market", "passed": want})
     if want: st["chainq"][p["pool"]] = {"p": p, "want": want, "tries": 0}
 
@@ -528,11 +554,12 @@ def step(st):
         st["seen"] = {k: v for k, v in st["seen"].items() if t - v < 7200}
     if len(st["chain_cache"]) > 5000: st["chain_cache"] = {}
 
-def run(minutes):
+def run(minutes, step_fn=None):
+    step_fn = step_fn or step
     os.makedirs(DATA_DIR, exist_ok=True)
     st = load_state()
     if st["started"] is None:
-        st["started"] = now(); log("events.jsonl", {"event": "start", "cfg": CFG, "books": BOOKS, "rpcs": RPCS})
+        st["started"] = now(); log("events.jsonl", {"event": "start", "mode": MODE, "cfg": CFG, "books": BOOKS, "rpcs": RPCS})
     if st.get("done"):
         print("run already finished"); return 0
     session_end = now() + minutes * 60
@@ -544,7 +571,7 @@ def run(minutes):
         t0 = now()
         end_run = st["started"] + run_hours() * 3600   # data/run_hours.txt can extend a live run
         stop_at = min(session_end, end_run)
-        try: step(st)
+        try: step_fn(st)
         except Exception as e: log("events.jsonl", {"event": "error", "err": repr(e)[:300]})
         save_state(st)
         if now() - last_commit > CFG["commit_every_min"] * 60:

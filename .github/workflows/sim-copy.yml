@@ -1,0 +1,45 @@
+name: paper sim (copy)
+# Paper only: reads public market data, writes journal files, never trades.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "41 * * * *"   # backup in case a self-restart is missed
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: sim-copy
+  cancel-in-progress: false
+env:
+  SIM_MODE: copy
+  SIM_DATA_DIR: data_copy
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - name: Skip if finished
+        id: chk
+        run: |
+          git pull -q origin ${{ github.ref_name }} || true
+          if [ -f $SIM_DATA_DIR/state.json ] && python3 -c "import json,os,sys;sys.exit(0 if json.load(open(os.environ['SIM_DATA_DIR']+'/state.json')).get('done') else 1)"; then echo done=1 >> $GITHUB_OUTPUT; else echo done=0 >> $GITHUB_OUTPUT; fi
+      - name: Run sim (about 5.5h per job, resumes from saved data)
+        if: steps.chk.outputs.done == '0'
+        env:
+          SIM_GIT_COMMIT: "1"
+        run: |
+          git config user.name "paper-sim"; git config user.email "paper-sim@users.noreply.github.com"
+          git pull -q --rebase origin ${{ github.ref_name }} || true
+          python3 copytrade.py run --minutes 330
+          python3 summarize.py || true
+          git add -A $SIM_DATA_DIR; git commit -qm "summary $SIM_MODE" || true
+          for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 5; done
+      - name: Start next job
+        if: steps.chk.outputs.done == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! python3 -c "import json,os,sys;sys.exit(0 if json.load(open(os.environ['SIM_DATA_DIR']+'/state.json')).get('done') else 1)"; then gh workflow run sim-copy.yml --ref ${{ github.ref_name }}; else gh workflow disable sim-copy.yml || true; fi

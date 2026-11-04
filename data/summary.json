@@ -1,0 +1,843 @@
+{
+  "generated": "2026-11-04T00:14:02Z",
+  "started": "2026-11-03T18:29:49Z",
+  "hours_covered": 5.65,
+  "gap_minutes": 150.4,
+  "gaps": [
+    {
+      "from": "2026-11-03T18:38:21Z",
+      "to": "2026-11-03T18:43:23Z",
+      "minutes": 5.0
+    },
+    {
+      "from": "2026-11-03T19:06:08Z",
+      "to": "2026-11-03T19:09:41Z",
+      "minutes": 3.6
+    },
+    {
+      "from": "2026-11-03T19:09:41Z",
+      "to": "2026-11-03T19:16:12Z",
+      "minutes": 6.5
+    },
+    {
+      "from": "2026-11-03T19:16:12Z",
+      "to": "2026-11-03T19:20:42Z",
+      "minutes": 4.5
+    },
+    {
+      "from": "2026-11-03T21:05:39Z",
+      "to": "2026-11-03T21:09:08Z",
+      "minutes": 3.5
+    },
+    {
+      "from": "2026-11-03T21:38:38Z",
+      "to": "2026-11-03T21:41:47Z",
+      "minutes": 3.2
+    },
+    {
+      "from": "2026-11-03T21:50:00Z",
+      "to": "2026-11-03T21:53:25Z",
+      "minutes": 3.4
+    },
+    {
+      "from": "2026-11-03T21:55:41Z",
+      "to": "2026-11-03T22:00:39Z",
+      "minutes": 5.0
+    },
+    {
+      "from": "2026-11-03T22:00:39Z",
+      "to": "2026-11-03T22:04:16Z",
+      "minutes": 3.6
+    },
+    {
+      "from": "2026-11-03T22:04:16Z",
+      "to": "2026-11-03T22:07:25Z",
+      "minutes": 3.2
+    },
+    {
+      "from": "2026-11-03T22:07:25Z",
+      "to": "2026-11-03T22:10:36Z",
+      "minutes": 3.2
+    },
+    {
+      "from": "2026-11-03T22:10:36Z",
+      "to": "2026-11-03T22:13:43Z",
+      "minutes": 3.1
+    },
+    {
+      "from": "2026-11-03T22:18:47Z",
+      "to": "2026-11-03T22:22:18Z",
+      "minutes": 3.5
+    },
+    {
+      "from": "2026-11-03T22:22:18Z",
+      "to": "2026-11-03T22:26:50Z",
+      "minutes": 4.5
+    },
+    {
+      "from": "2026-11-03T22:26:50Z",
+      "to": "2026-11-03T22:33:48Z",
+      "minutes": 7.0
+    },
+    {
+      "from": "2026-11-03T22:33:48Z",
+      "to": "2026-11-03T22:40:37Z",
+      "minutes": 6.8
+    },
+    {
+      "from": "2026-11-03T22:40:37Z",
+      "to": "2026-11-03T22:45:45Z",
+      "minutes": 5.1
+    },
+    {
+      "from": "2026-11-03T22:45:45Z",
+      "to": "2026-11-03T22:52:07Z",
+      "minutes": 6.4
+    },
+    {
+      "from": "2026-11-03T22:52:07Z",
+      "to": "2026-11-03T22:57:06Z",
+      "minutes": 5.0
+    },
+    {
+      "from": "2026-11-03T22:57:06Z",
+      "to": "2026-11-03T23:02:26Z",
+      "minutes": 5.3
+    },
+    {
+      "from": "2026-11-03T23:02:26Z",
+      "to": "2026-11-03T23:08:04Z",
+      "minutes": 5.6
+    },
+    {
+      "from": "2026-11-03T23:08:04Z",
+      "to": "2026-11-03T23:15:25Z",
+      "minutes": 7.3
+    },
+    {
+      "from": "2026-11-03T23:15:25Z",
+      "to": "2026-11-03T23:20:45Z",
+      "minutes": 5.3
+    },
+    {
+      "from": "2026-11-03T23:20:45Z",
+      "to": "2026-11-03T23:27:21Z",
+      "minutes": 6.6
+    },
+    {
+      "from": "2026-11-03T23:27:21Z",
+      "to": "2026-11-03T23:32:54Z",
+      "minutes": 5.5
+    },
+    {
+      "from": "2026-11-03T23:32:54Z",
+      "to": "2026-11-03T23:39:05Z",
+      "minutes": 6.2
+    },
+    {
+      "from": "2026-11-03T23:39:05Z",
+      "to": "2026-11-03T23:44:10Z",
+      "minutes": 5.1
+    },
+    {
+      "from": "2026-11-03T23:44:10Z",
+      "to": "2026-11-03T23:49:20Z",
+      "minutes": 5.2
+    },
+    {
+      "from": "2026-11-03T23:49:20Z",
+      "to": "2026-11-03T23:55:17Z",
+      "minutes": 6.0
+    },
+    {
+      "from": "2026-11-03T23:55:17Z",
+      "to": "2026-11-04T00:01:30Z",
+      "minutes": 6.2
+    }
+  ],
+  "done": false,
+  "counts": {
+    "scan_pages_maxed": 70,
+    "launches_seen": 5750,
+    "sampled": 1125,
+    "ignored_non_pump": 1163,
+    "evaluated": 5447,
+    "no_data": 175,
+    "shadow_cap": 82
+  },
+  "api_calls": {
+    "gt": 2411,
+    "rpc": 389,
+    "err": 1335
+  },
+  "rpc_fail": {
+    "solana-rpc.publicnode.com:getTokenLargestAccounts": 9,
+    "solana.drpc.org:getTokenLargestAccounts": 9,
+    "api.mainnet-beta.solana.com:getTokenLargestAccounts": 9
+  },
+  "books": {
+    "strict": {
+      "pnl_usd": 1126464.24,
+      "pnl_pct": 112646.42,
+      "open": 3,
+      "counts": {
+        "kill:low_liquidity": 5107,
+        "survivor": 148,
+        "trade": 39,
+        "kill:low_volume": 152,
+        "skip:max_open": 109,
+        "kill:whale_wallet": 3,
+        "kill:mcap_too_low": 7,
+        "kill:few_buyers": 12,
+        "kill:dumping_m5": 9,
+        "kill:mcap_too_high": 7,
+        "kill:sell_heavy_m5": 1,
+        "kill:sell_heavy_h1": 1
+      },
+      "entries_holder_check_unknown": 0,
+      "closed_trades": {
+        "n": 36,
+        "avg_pct": 156452.77,
+        "median_pct": 12.88,
+        "win_rate": 55.6
+      },
+      "rules_on_all_its_survivors": {
+        "n": 111,
+        "avg_pct": 467889.9,
+        "median_pct": 14.48,
+        "win_rate": 55.9
+      },
+      "random_hold_on_its_survivors": {
+        "n": 5650,
+        "avg_pct": 476390.54,
+        "median_pct": -5.83,
+        "win_rate": 47.4
+      },
+      "wallet_20": {
+        "start": 20.0,
+        "end": 1.682771994561232e+18,
+        "return_pct": 8.41385997280616e+18,
+        "max_drawdown_pct": 52.1,
+        "trades": 39,
+        "stake_pct": 25
+      },
+      "exit_reasons": {
+        "stop_loss": 14,
+        "volume_fade": 22
+      },
+      "best": [
+        {
+          "ts": "2026-11-03T22:57:05Z",
+          "event": "exit",
+          "book": "strict",
+          "pool": "CWaNE8xJSNMbDkJGPbuTVgHXCTbE1QFp16gnR3TfoEoK",
+          "mint": "9mtQQ6C2QCi4ZrJZcSQjJUbkMsefk72smVQtvw6wL7eX",
+          "name": "AMD / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-03T22:22:06Z",
+          "hold_min": 35.0,
+          "entry_px": 1.1361561415536134e-05,
+          "exit_px": 0.16160311822720927,
+          "peak_px": 0.16160311822720927,
+          "cost": 20.0,
+          "proceeds": 267878.5903,
+          "pnl": 267858.5903,
+          "pnl_pct": 1339292.95
+        },
+        {
+          "ts": "2026-11-03T19:20:41Z",
+          "event": "exit",
+          "book": "strict",
+          "pool": "DGGpfMMosFpBqoL5QhYyM6nDf5VgE5kfUNrsAQauqFQe",
+          "mint": "HkuxdmH846wNtGZoLEJHxWyou8pBJBG1fiEPU7NVfNmf",
+          "name": "PEACE / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-03T18:59:50Z",
+          "hold_min": 20.9,
+          "entry_px": 2.8815547410674997e-05,
+          "exit_px": 0.3716374771941488,
+          "peak_px": 0.3716374771941488,
+          "cost": 20.0,
+          "proceeds": 242895.1917,
+          "pnl": 242875.1917,
+          "pnl_pct": 1214375.96
+        },
+        {
+          "ts": "2026-11-03T21:53:24Z",
+          "event": "exit",
+          "book": "strict",
+          "pool": "GcRratB1ZnQn9NLxjJ25Bru8r1w5LMryxW8vh47hqpYP",
+          "mint": "8taMrC4DLbdt1k3JjNH5YZktgfZDoAXyt83nEtrKgUhQ",
+          "name": "FOREVER / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-03T21:36:07Z",
+          "hold_min": 17.3,
+          "entry_px": 3.154532385571285e-05,
+          "exit_px": 0.3243052271100448,
+          "peak_px": 0.3243052271100448,
+          "cost": 20.0,
+          "proceeds": 193617.7848,
+          "pnl": 193597.7848,
+          "pnl_pct": 967988.92
+        }
+      ],
+      "worst": [
+        {
+          "ts": "2026-11-03T23:08:03Z",
+          "event": "exit",
+          "book": "strict",
+          "pool": "FDZ1aBiMXQKVvyKj2ZCueGfN4yebE86q5tgA6PebkRYR",
+          "mint": "4aXcCFJu447toMTWf26pcFZg61X3KyCtkBuACFQAXoxZ",
+          "name": "Green Cat / SOL",
+          "reason": "stop_loss",
+          "entry_t": "2026-11-03T23:02:09Z",
+          "hold_min": 5.9,
+          "entry_px": 3.8750518766312974e-05,
+          "exit_px": 8.386704536725174e-09,
+          "peak_px": 3.8750518766312974e-05,
+          "cost": 20.0,
+          "proceeds": 0.0041,
+          "pnl": -19.9959,
+          "pnl_pct": -99.98
+        },
+        {
+          "ts": "2026-11-03T22:57:05Z",
+          "event": "exit",
+          "book": "strict",
+          "pool": "HvDecyMAxZGmQPk2ATZVhtu2FWKjUi7SY3J5Egf95qW2",
+          "mint": "2aZsSSeUmv7B56WrwdTMHECTpVSMpfr6ya5qtaoepump",
+          "name": "GTA 6 Coin / SOL",
+          "reason": "stop_loss",
+          "entry_t": "2026-11-03T22:40:10Z",
+          "hold_min": 16.9,
+          "entry_px": 0.00014690423469522135,
+          "exit_px": 1.7165133770828918e-06,
+          "peak_px": 0.00023317077132618607,
+          "cost": 20.0,
+          "proceeds": 0.2201,
+          "pnl": -19.7799,
+          "pnl_pct": -98.9
+        },
+        {
+          "ts": "2026-11-03T19:38:10Z",
+          "event": "exit",
+          "book": "strict",
+          "pool": "ERybactMwQBAfFjjSQb4CaapcVuAugqygKrAdc8CQB7U",
+          "mint": "NQMp5hneZHsUEBHguEfcbvZ6n6ZiucMQGLRMobmwBak",
+          "name": "Mag / SOL",
+          "reason": "stop_loss",
+          "entry_t": "2026-11-03T19:34:55Z",
+          "hold_min": 3.2,
+          "entry_px": 8.929428652967969e-07,
+          "exit_px": 1.0588724133613582e-08,
+          "peak_px": 9.120123205839765e-07,
+          "cost": 20.0,
+          "proceeds": 0.2233,
+          "pnl": -19.7767,
+          "pnl_pct": -98.88
+        }
+      ]
+    },
+    "medium": {
+      "pnl_usd": 530868.76,
+      "pnl_pct": 53086.88,
+      "open": 3,
+      "counts": {
+        "kill:low_liquidity": 4744,
+        "kill:mcap_too_low": 96,
+        "kill:low_volume": 381,
+        "survivor": 178,
+        "trade": 36,
+        "skip:max_open": 142,
+        "kill:whale_wallet": 4,
+        "kill:few_buyers": 16,
+        "kill:sell_heavy_m5": 9,
+        "kill:few_trades": 1,
+        "kill:dumping_m5": 10,
+        "kill:mcap_too_high": 7,
+        "kill:sell_heavy_h1": 1
+      },
+      "entries_holder_check_unknown": 0,
+      "closed_trades": {
+        "n": 33,
+        "avg_pct": 80433.71,
+        "median_pct": -6.37,
+        "win_rate": 42.4
+      },
+      "rules_on_all_its_survivors": {
+        "n": 134,
+        "avg_pct": 387583.76,
+        "median_pct": 6.68,
+        "win_rate": 53.7
+      },
+      "random_hold_on_its_survivors": {
+        "n": 6800,
+        "avg_pct": 408352.63,
+        "median_pct": -15.96,
+        "win_rate": 44.8
+      },
+      "wallet_20": {
+        "start": 20.0,
+        "end": 36473639.49,
+        "return_pct": 182368097.5,
+        "max_drawdown_pct": 76.3,
+        "trades": 36,
+        "stake_pct": 25
+      },
+      "exit_reasons": {
+        "stop_loss": 14,
+        "volume_fade": 19
+      },
+      "best": [
+        {
+          "ts": "2026-11-03T19:20:41Z",
+          "event": "exit",
+          "book": "medium",
+          "pool": "DGGpfMMosFpBqoL5QhYyM6nDf5VgE5kfUNrsAQauqFQe",
+          "mint": "HkuxdmH846wNtGZoLEJHxWyou8pBJBG1fiEPU7NVfNmf",
+          "name": "PEACE / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-03T18:59:50Z",
+          "hold_min": 20.9,
+          "entry_px": 2.8815547410674997e-05,
+          "exit_px": 0.3716374771941488,
+          "peak_px": 0.3716374771941488,
+          "cost": 20.0,
+          "proceeds": 242895.1917,
+          "pnl": 242875.1917,
+          "pnl_pct": 1214375.96
+        },
+        {
+          "ts": "2026-11-03T19:57:58Z",
+          "event": "exit",
+          "book": "medium",
+          "pool": "Fa5J1RmMsFeHbR4R16sa1hwKwPYZjbZrJ4gynqZCvYCY",
+          "mint": "J9uYR66eH4vJVoLTpTzXtf8jZgawMCbexUg2QKNbKueX",
+          "name": "Plonk / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-03T19:42:28Z",
+          "hold_min": 15.5,
+          "entry_px": 0.0002989243028035276,
+          "exit_px": 2.3290165513194414,
+          "peak_px": 2.3290165513194414,
+          "cost": 20.0,
+          "proceeds": 146736.3252,
+          "pnl": 146716.3252,
+          "pnl_pct": 733581.63
+        },
+        {
+          "ts": "2026-11-03T20:37:27Z",
+          "event": "exit",
+          "book": "medium",
+          "pool": "iLSFFLC6mzFKdrBjUWH4tTZYd9zC9c4mbsXHqCbf4J4",
+          "mint": "EcHSMqPFX3TY6woiDxuKmjM1TBB1fzSVMCMwU4dMzuSD",
+          "name": "FOREVER / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-03T19:49:03Z",
+          "hold_min": 48.4,
+          "entry_px": 3.3756047203942e-05,
+          "exit_px": 0.5066404644965016,
+          "peak_px": 0.5066404644965016,
+          "cost": 20.0,
+          "proceeds": 141352.2545,
+          "pnl": 141332.2545,
+          "pnl_pct": 706661.27
+        }
+      ],
+      "worst": [
+        {
+          "ts": "2026-11-03T22:57:05Z",
+          "event": "exit",
+          "book": "medium",
+          "pool": "HvDecyMAxZGmQPk2ATZVhtu2FWKjUi7SY3J5Egf95qW2",
+          "mint": "2aZsSSeUmv7B56WrwdTMHECTpVSMpfr6ya5qtaoepump",
+          "name": "GTA 6 Coin / SOL",
+          "reason": "stop_loss",
+          "entry_t": "2026-11-03T22:40:10Z",
+          "hold_min": 16.9,
+          "entry_px": 0.00014690423469522135,
+          "exit_px": 1.7165133770828918e-06,
+          "peak_px": 0.00023317077132618607,
+          "cost": 20.0,
+          "proceeds": 0.2201,
+          "pnl": -19.7799,
+          "pnl_pct": -98.9
+        },
+        {
+          "ts": "2026-11-03T19:38:10Z",
+          "event": "exit",
+          "book": "medium",
+          "pool": "ERybactMwQBAfFjjSQb4CaapcVuAugqygKrAdc8CQB7U",
+          "mint": "NQMp5hneZHsUEBHguEfcbvZ6n6ZiucMQGLRMobmwBak",
+          "name": "Mag / SOL",
+          "reason": "stop_loss",
+          "entry_t": "2026-11-03T19:34:55Z",
+          "hold_min": 3.2,
+          "entry_px": 8.929428652967969e-07,
+          "exit_px": 1.0588724133613582e-08,
+          "peak_px": 9.120123205839765e-07,
+          "cost": 20.0,
+          "proceeds": 0.2233,
+          "pnl": -19.7767,
+          "pnl_pct": -98.88
+        },
+        {
+          "ts": "2026-11-03T22:33:47Z",
+          "event": "exit",
+          "book": "medium",
+          "pool": "FFe6MuPWFXcK6V155oNLHu4bQaChw5aS1oMcS4LSmMS5",
+          "mint": "7rQftN3UWR3fvVs2MofVwSHWqBxih2THGrvPas15pump",
+          "name": "X / SOL",
+          "reason": "stop_loss",
+          "entry_t": "2026-11-03T22:26:47Z",
+          "hold_min": 7.0,
+          "entry_px": 6.767746668074382e-05,
+          "exit_px": 1.740829910181873e-06,
+          "peak_px": 6.767746668074382e-05,
+          "cost": 20.0,
+          "proceeds": 0.4844,
+          "pnl": -19.5156,
+          "pnl_pct": -97.58
+        }
+      ]
+    },
+    "curve": {
+      "pnl_usd": 146718.06,
+      "pnl_pct": 14671.81,
+      "open": 3,
+      "counts": {
+        "kill:mcap_too_low": 2043,
+        "kill:low_volume": 1244,
+        "kill:low_liquidity": 1495,
+        "survivor": 377,
+        "trade": 20,
+        "kill:sell_heavy_m5": 67,
+        "skip:max_open": 357,
+        "kill:dumping_m5": 13,
+        "kill:few_trades": 102,
+        "kill:few_buyers": 60,
+        "kill:whale_wallet": 9,
+        "kill:mcap_too_high": 7,
+        "kill:sell_heavy_h1": 28,
+        "kill:concentrated_top10": 1
+      },
+      "entries_holder_check_unknown": 0,
+      "closed_trades": {
+        "n": 17,
+        "avg_pct": 43153.17,
+        "median_pct": -5.83,
+        "win_rate": 35.3
+      },
+      "rules_on_all_its_survivors": {
+        "n": 255,
+        "avg_pct": 203665.43,
+        "median_pct": -5.83,
+        "win_rate": 31.0
+      },
+      "random_hold_on_its_survivors": {
+        "n": 14750,
+        "avg_pct": 198858.38,
+        "median_pct": -6.29,
+        "win_rate": 21.6
+      },
+      "wallet_20": {
+        "start": 20.0,
+        "end": 24933.68,
+        "return_pct": 124568.4,
+        "max_drawdown_pct": 49.9,
+        "trades": 20,
+        "stake_pct": 25
+      },
+      "exit_reasons": {
+        "stop_loss": 3,
+        "volume_fade": 14
+      },
+      "best": [
+        {
+          "ts": "2026-11-03T19:57:58Z",
+          "event": "exit",
+          "book": "curve",
+          "pool": "Fa5J1RmMsFeHbR4R16sa1hwKwPYZjbZrJ4gynqZCvYCY",
+          "mint": "J9uYR66eH4vJVoLTpTzXtf8jZgawMCbexUg2QKNbKueX",
+          "name": "Plonk / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-03T19:42:28Z",
+          "hold_min": 15.5,
+          "entry_px": 0.0002989243028035276,
+          "exit_px": 2.3290165513194414,
+          "peak_px": 2.3290165513194414,
+          "cost": 20.0,
+          "proceeds": 146736.3252,
+          "pnl": 146716.3252,
+          "pnl_pct": 733581.63
+        },
+        {
+          "ts": "2026-11-03T20:33:36Z",
+          "event": "exit",
+          "book": "curve",
+          "pool": "9hQgDyx23Y8u7BW1WNW512JwVHxaEZcnXQXmTNUMxKog",
+          "mint": "8MfhJCi4Ei3uFAJx5EvXxJTX2fXiJbSbgzWuyU1y1ETu",
+          "name": "2 / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-03T19:57:43Z",
+          "hold_min": 35.9,
+          "entry_px": 3.260629138695286e-05,
+          "exit_px": 8.772762564414574e-05,
+          "peak_px": 8.772762564414574e-05,
+          "cost": 20.0,
+          "proceeds": 45.4238,
+          "pnl": 25.4238,
+          "pnl_pct": 127.12
+        },
+        {
+          "ts": "2026-11-03T19:23:21Z",
+          "event": "exit",
+          "book": "curve",
+          "pool": "6wGsAoN74LyJ9zcFGQcimwhnGhTY1QdSzq7eqcy8eERQ",
+          "mint": "3qMSwDMHzG6MRZK9p24C1i3CcDhLnEho2gNue47FzQvM",
+          "name": "STONKS / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-03T18:37:58Z",
+          "hold_min": 45.4,
+          "entry_px": 2.8799610479713496e-05,
+          "exit_px": 6.106361887614762e-05,
+          "peak_px": 6.106361887614762e-05,
+          "cost": 20.0,
+          "proceeds": 39.4473,
+          "pnl": 19.4473,
+          "pnl_pct": 97.24
+        }
+      ],
+      "worst": [
+        {
+          "ts": "2026-11-03T19:38:10Z",
+          "event": "exit",
+          "book": "curve",
+          "pool": "ERybactMwQBAfFjjSQb4CaapcVuAugqygKrAdc8CQB7U",
+          "mint": "NQMp5hneZHsUEBHguEfcbvZ6n6ZiucMQGLRMobmwBak",
+          "name": "Mag / SOL",
+          "reason": "stop_loss",
+          "entry_t": "2026-11-03T19:34:55Z",
+          "hold_min": 3.2,
+          "entry_px": 8.929428652967969e-07,
+          "exit_px": 1.0588724133613582e-08,
+          "peak_px": 9.120123205839765e-07,
+          "cost": 20.0,
+          "proceeds": 0.2233,
+          "pnl": -19.7767,
+          "pnl_pct": -98.88
+        },
+        {
+          "ts": "2026-11-03T19:34:03Z",
+          "event": "exit",
+          "book": "curve",
+          "pool": "ECySq1CWtHjjgofaSVpoCaym6znBYfo3grgqqdyKYg7T",
+          "mint": "2j1rF5b2dNQFG98ktwx3osbxQFgHxw9k95Sk6MzMpump",
+          "name": "Pok\u00e9mon / SOL",
+          "reason": "stop_loss",
+          "entry_t": "2026-11-03T19:31:03Z",
+          "hold_min": 3.0,
+          "entry_px": 0.0001664558437969609,
+          "exit_px": 6.512160832229236e-05,
+          "peak_px": 0.00018257322292266755,
+          "cost": 20.0,
+          "proceeds": 7.368,
+          "pnl": -12.632,
+          "pnl_pct": -63.16
+        },
+        {
+          "ts": "2026-11-03T19:41:41Z",
+          "event": "exit",
+          "book": "curve",
+          "pool": "GdWzM1iJwpbCXp8wM8wJdpmE2TEjdDt3ZDmJkXbH43A2",
+          "mint": "3dRJvy5cjjBnokLSwL3BPvYeDJMuzQktGsBbRAqypump",
+          "name": "RabBIT / Satoshi",
+          "reason": "stop_loss",
+          "entry_t": "2026-11-03T19:29:17Z",
+          "hold_min": 12.4,
+          "entry_px": 1.4887999419451154e-05,
+          "exit_px": 8.817424852325106e-06,
+          "peak_px": 1.4887999419451154e-05,
+          "cost": 20.0,
+          "proceeds": 11.154,
+          "pnl": -8.846,
+          "pnl_pct": -44.23
+        }
+      ]
+    },
+    "rugonly": {
+      "pnl_usd": -6.64,
+      "pnl_pct": -0.66,
+      "open": 3,
+      "counts": {
+        "not_checked_book_full": 5441,
+        "survivor": 6,
+        "trade": 6
+      },
+      "entries_holder_check_unknown": 0,
+      "closed_trades": {
+        "n": 3,
+        "avg_pct": -5.22,
+        "median_pct": -5.83,
+        "win_rate": 0.0
+      },
+      "rules_on_all_its_survivors": {
+        "n": 3,
+        "avg_pct": -5.22,
+        "median_pct": -5.83,
+        "win_rate": 0.0
+      },
+      "random_hold_on_its_survivors": {
+        "n": 300,
+        "avg_pct": -9.23,
+        "median_pct": -5.83,
+        "win_rate": 0.0
+      },
+      "wallet_20": {
+        "start": 20.0,
+        "end": 19.23,
+        "return_pct": -3.9,
+        "max_drawdown_pct": 3.9,
+        "trades": 6,
+        "stake_pct": 25
+      },
+      "exit_reasons": {
+        "volume_fade": 3
+      },
+      "best": [
+        {
+          "ts": "2026-11-03T20:33:36Z",
+          "event": "exit",
+          "book": "rugonly",
+          "pool": "7XzEou19G41N7PD5qznddv1WTuY3n7UwJ4E4cvRHLMU1",
+          "mint": "fKJAtGZYjUz4mtcap3Uegc37FjcjuJ5rS9aPASVpump",
+          "name": "IQD / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-03T19:19:15Z",
+          "hold_min": 74.3,
+          "entry_px": 0.0025228174515747833,
+          "exit_px": 0.0025716534359481423,
+          "peak_px": 0.0025717549815610034,
+          "cost": 20.0,
+          "proceeds": 19.1979,
+          "pnl": -0.8021,
+          "pnl_pct": -4.01
+        },
+        {
+          "ts": "2026-11-03T19:14:30Z",
+          "event": "exit",
+          "book": "rugonly",
+          "pool": "CVTzEFqtmQtUu8NpwSZTGQVkzuW2NPXkt6YGjkQ5R3r6",
+          "mint": "12gCfEBMPvaUBxMa4Wq4AYEZ8w2M5F9ej6dYZRiyJ5P3",
+          "name": "casino / SPYx",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-03T18:54:19Z",
+          "hold_min": 20.2,
+          "entry_px": 3.1303694731856097e-06,
+          "exit_px": 3.1303694731856097e-06,
+          "peak_px": 3.1303694731856097e-06,
+          "cost": 20.0,
+          "proceeds": 18.8333,
+          "pnl": -1.1667,
+          "pnl_pct": -5.83
+        },
+        {
+          "ts": "2026-11-03T18:52:52Z",
+          "event": "exit",
+          "book": "rugonly",
+          "pool": "3uLNKku2nLgWENqQBv3TeS4yhFSFYuiAXT8yF5E4JBxY",
+          "mint": "FnGWKkGapXU8jbzXV2sDKRfjHHEtbPaGYEjdtiRepump",
+          "name": "CRTMIND / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-03T18:37:39Z",
+          "hold_min": 15.2,
+          "entry_px": 2.623905218469455e-06,
+          "exit_px": 2.623905218469455e-06,
+          "peak_px": 2.623905218469455e-06,
+          "cost": 20.0,
+          "proceeds": 18.8333,
+          "pnl": -1.1667,
+          "pnl_pct": -5.83
+        }
+      ],
+      "worst": [
+        {
+          "ts": "2026-11-03T18:52:52Z",
+          "event": "exit",
+          "book": "rugonly",
+          "pool": "3uLNKku2nLgWENqQBv3TeS4yhFSFYuiAXT8yF5E4JBxY",
+          "mint": "FnGWKkGapXU8jbzXV2sDKRfjHHEtbPaGYEjdtiRepump",
+          "name": "CRTMIND / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-03T18:37:39Z",
+          "hold_min": 15.2,
+          "entry_px": 2.623905218469455e-06,
+          "exit_px": 2.623905218469455e-06,
+          "peak_px": 2.623905218469455e-06,
+          "cost": 20.0,
+          "proceeds": 18.8333,
+          "pnl": -1.1667,
+          "pnl_pct": -5.83
+        },
+        {
+          "ts": "2026-11-03T19:14:30Z",
+          "event": "exit",
+          "book": "rugonly",
+          "pool": "CVTzEFqtmQtUu8NpwSZTGQVkzuW2NPXkt6YGjkQ5R3r6",
+          "mint": "12gCfEBMPvaUBxMa4Wq4AYEZ8w2M5F9ej6dYZRiyJ5P3",
+          "name": "casino / SPYx",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-03T18:54:19Z",
+          "hold_min": 20.2,
+          "entry_px": 3.1303694731856097e-06,
+          "exit_px": 3.1303694731856097e-06,
+          "peak_px": 3.1303694731856097e-06,
+          "cost": 20.0,
+          "proceeds": 18.8333,
+          "pnl": -1.1667,
+          "pnl_pct": -5.83
+        },
+        {
+          "ts": "2026-11-03T20:33:36Z",
+          "event": "exit",
+          "book": "rugonly",
+          "pool": "7XzEou19G41N7PD5qznddv1WTuY3n7UwJ4E4cvRHLMU1",
+          "mint": "fKJAtGZYjUz4mtcap3Uegc37FjcjuJ5rS9aPASVpump",
+          "name": "IQD / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-03T19:19:15Z",
+          "hold_min": 74.3,
+          "entry_px": 0.0025228174515747833,
+          "exit_px": 0.0025716534359481423,
+          "peak_px": 0.0025717549815610034,
+          "cost": 20.0,
+          "proceeds": 19.1979,
+          "pnl": -0.8021,
+          "pnl_pct": -4.01
+        }
+      ]
+    }
+  },
+  "all_launch_sample": {
+    "launches_sampled": 1125,
+    "with_entry_price": 1103,
+    "random_exit_within_3h": {
+      "n": 53800,
+      "avg_pct": 5017.86,
+      "median_pct": -5.83,
+      "win_rate": 3.3
+    },
+    "hold_1h": {
+      "n": 1076,
+      "avg_pct": 6275.4,
+      "median_pct": -5.83,
+      "win_rate": 3.2
+    },
+    "hold_3h": {
+      "n": 1076,
+      "avg_pct": 6274.75,
+      "median_pct": -5.83,
+      "win_rate": 3.2
+    }
+  }
+}

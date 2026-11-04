@@ -1,0 +1,13 @@
+{"ts": "2026-11-04T13:02:09Z", "event": "start", "mode": "grad", "cfg": {"version": 2, "run_hours": 24, "account_usd": 1000.0, "ticket_usd": 20.0, "max_open": 3, "fee": 0.01, "slippage": 0.02, "eval_min_age_min": 15, "eval_max_age_min": 45, "max_top1_wallet_pct": 10.0, "max_top10_wallet_pct": 35.0, "chain_checks_per_step": 12, "chain_retry_steps": 2, "rpc_holders": false, "stop_pct": -25.0, "tp_mult": 2.0, "fade_after_min": 15, "fade_ratio": 0.25, "max_hold_h": 12, "no_price_polls": 3, "glitch_jump": 50.0, "suspect_jump": 10.0, "shadow_hours": 6, "shadow_sample_min": 2, "max_active_shadows": 150, "sample_one_in": 2, "sample_hours": 6, "sample_every_min": 5, "max_active_samples": 1500, "poll_s": 60, "max_pages": 4, "gt_min_gap_s": 3.0, "commit_every_min": 10, "trail_arm_mult": 1.5, "trail_drop": 0.3}, "books": {"momo": {"min_liq_usd": 15000, "min_mcap_usd": 30000, "max_mcap_usd": 5000000, "min_vol_h1_usd": 20000, "min_trades_h1": 150, "min_buyers_h1": 80, "max_sell_buy_h1": 1.0, "max_sell_buy_m5": 1.2, "min_pc_m5": 0.0, "min_pc_h1": 10.0}, "loose": {"min_liq_usd": 8000, "min_mcap_usd": 15000, "max_mcap_usd": 5000000, "min_vol_h1_usd": 10000, "min_trades_h1": 60, "min_buyers_h1": 40, "max_sell_buy_h1": 1.2, "max_sell_buy_m5": 1.5, "min_pc_m5": -10.0}, "any": null}, "rpcs": ["https://solana-rpc.publicnode.com", "https://solana.drpc.org", "https://api.mainnet-beta.solana.com"]}
+{"ts": "2026-11-04T13:02:09Z", "event": "session_start", "until": "2026-11-04T18:32:09Z", "run_hours": 24}
+{"ts": "2026-11-04T13:05:21Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:06:12Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:06:28Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:06:41Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:06:54Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:07:09Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:07:22Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:07:35Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:07:48Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:08:12Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T13:10:12Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}

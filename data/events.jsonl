@@ -1354,3 +1354,42 @@
 {"ts": "2026-11-04T00:13:27Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
 {"ts": "2026-11-04T00:13:37Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
 {"ts": "2026-11-04T00:14:01Z", "event": "session_end"}
+{"ts": "2026-11-04T05:45:41Z", "event": "session_start", "until": "2026-11-04T11:15:41Z", "run_hours": 24}
+{"ts": "2026-11-04T05:45:41Z", "event": "gap", "from": "2026-11-04T00:08:33Z", "to": "2026-11-04T05:45:41Z", "minutes": 337.1}
+{"ts": "2026-11-04T05:45:52Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:46:05Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:46:17Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:46:29Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:46:41Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:46:54Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:47:06Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:47:18Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:47:30Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:47:42Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:47:55Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:48:07Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:48:19Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:48:31Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:48:44Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:48:56Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:49:08Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:49:20Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:49:33Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:49:45Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:49:57Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:50:09Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:50:21Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:50:34Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:50:46Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:50:58Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:51:10Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:51:23Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:51:34Z", "event": "gap", "from": "2026-11-04T05:45:41Z", "to": "2026-11-04T05:51:34Z", "minutes": 5.9}
+{"ts": "2026-11-04T05:51:35Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:51:47Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:51:59Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:52:12Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:52:24Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:52:36Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:52:48Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T05:55:44Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}

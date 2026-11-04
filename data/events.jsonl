@@ -2062,3 +2062,66 @@
 {"ts": "2026-11-04T08:20:35Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
 {"ts": "2026-11-04T08:20:47Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
 {"ts": "2026-11-04T08:21:00Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:21:14Z", "event": "gap", "from": "2026-11-04T08:17:56Z", "to": "2026-11-04T08:21:14Z", "minutes": 3.3}
+{"ts": "2026-11-04T08:21:16Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:21:28Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:21:41Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:21:53Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:22:05Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:22:17Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:22:29Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:22:42Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:22:54Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:23:06Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:23:18Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:23:30Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:23:43Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:23:55Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:24:07Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:24:19Z", "event": "gap", "from": "2026-11-04T08:21:14Z", "to": "2026-11-04T08:24:19Z", "minutes": 3.1}
+{"ts": "2026-11-04T08:24:19Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:24:32Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:24:44Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:24:56Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:25:08Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:25:20Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:25:33Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:25:45Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:25:57Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:26:09Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:26:21Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:26:34Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:26:46Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:26:58Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:27:10Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:27:23Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:27:35Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:27:47Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:27:59Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:28:11Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:28:23Z", "event": "gap", "from": "2026-11-04T08:24:19Z", "to": "2026-11-04T08:28:23Z", "minutes": 4.1}
+{"ts": "2026-11-04T08:28:24Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:28:36Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:28:48Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:29:00Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:29:12Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:29:27Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:29:39Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:29:51Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:30:04Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:30:16Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:30:28Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:30:40Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:30:52Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:31:05Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:31:17Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:31:29Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:31:41Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:31:54Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:32:06Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:32:18Z", "event": "rate_limited", "source": "gt", "host": "api.geckoterminal.com"}
+{"ts": "2026-11-04T08:32:29Z", "event": "price_glitch", "book": "strict", "pool": "HZPpn7YNVQ3iwCgRaCG8GqeJuCrBGhkk2rs5dpDi3CnV", "last_px": 7.213639247446169e-05, "px": 0.5413325122714934, "liq": 0.0093, "mcap": 541332512.3, "vol_m5": 3715.8548095641}
+{"ts": "2026-11-04T08:32:29Z", "event": "price_glitch", "book": "medium", "pool": "HZPpn7YNVQ3iwCgRaCG8GqeJuCrBGhkk2rs5dpDi3CnV", "last_px": 7.213639247446169e-05, "px": 0.5413325122714934, "liq": 0.0093, "mcap": 541332512.3, "vol_m5": 3715.8548095641}
+{"ts": "2026-11-04T08:32:29Z", "event": "price_glitch", "book": "shadow", "pool": "Rauz9SVN9rrdKvxbG2KHjqvVuobfmHXKgWdPQRBrT17", "last_px": 0.00015237355645049603, "px": 0.7300764649012231, "liq": 0.0002368700484, "mcap": 730076464.9, "vol_m5": 18448.4086618489}
+{"ts": "2026-11-04T08:32:29Z", "event": "price_glitch", "book": "shadow", "pool": "2jT1DuAjonmcVpPGHyQhXCoYfKWEZquGvotQLTMTGCBm", "last_px": 1.3818842183872749e-05, "px": 0.22512071178836418, "liq": 0.0093, "mcap": 15635.7037739378, "vol_m5": 39821.4510875634}
+{"ts": "2026-11-04T08:32:29Z", "event": "price_glitch", "book": "shadow", "pool": "HZPpn7YNVQ3iwCgRaCG8GqeJuCrBGhkk2rs5dpDi3CnV", "last_px": 7.213639247446169e-05, "px": 0.5413325122714934, "liq": 0.0093, "mcap": 541332512.3, "vol_m5": 3715.8548095641}

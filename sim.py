@@ -62,7 +62,7 @@ CFG = {
     # survivor shadows
     "shadow_hours": 6,
     "shadow_sample_min": 2,
-    "max_active_shadows": 300,
+    "max_active_shadows": 150,
     # all-launch sample
     "sample_one_in": 5,
     "sample_hours": 3,
@@ -71,7 +71,7 @@ CFG = {
     # loop
     "poll_s": 60,
     "max_pages": 4,
-    "gt_min_gap_s": 2.2,
+    "gt_min_gap_s": 3.0,
     "commit_every_min": 10,
 }
 

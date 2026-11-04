@@ -369,6 +369,8 @@ def manage(st, holder, book, quotes):
         if 100 * (px / pos["entry_px"] - 1) <= CFG["stop_pct"]: close(st, holder, key, px, "stop_loss", book); continue
         if not pos["half_taken"] and px >= CFG["tp_mult"] * pos["entry_px"]:
             close(st, holder, key, px, "take_half_2x", book, frac=0.5); pos["half_taken"] = True
+        if held_min >= CFG["fade_after_min"] and q["vol_m5"] <= 0:  # nobody trading it (entry m5 volume was 0 too, so the fade rule never fired)
+            close(st, holder, key, px, "no_volume", book); continue
         if held_min >= CFG["fade_after_min"] and pos["entry_vol_m5"] > 0 and q["vol_m5"] < CFG["fade_ratio"] * pos["entry_vol_m5"]:
             close(st, holder, key, px, "volume_fade", book); continue
         if held_min >= CFG["max_hold_h"] * 60: close(st, holder, key, px, "max_hold", book); continue

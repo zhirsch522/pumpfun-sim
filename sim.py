@@ -89,11 +89,11 @@ if MODE == "grad":
                   "min_pc_m5": -10.0},
         "any": None,   # chain checks only
     }
-    CFG.update({"version": 2, "eval_min_age_min": 15, "eval_max_age_min": 45, "stop_pct": -25.0, "max_hold_h": 12,
+    CFG.update({"gt_min_gap_s": 5.0, "version": 2, "eval_min_age_min": 15, "eval_max_age_min": 45, "stop_pct": -25.0, "max_hold_h": 12,
                 "trail_arm_mult": 1.5, "trail_drop": 0.30, "sample_one_in": 2, "sample_hours": 6})
 elif MODE == "copy":
     BOOKS = {"leaders": None, "random_wallet": None}
-    CFG.update({"max_hold_h": 6, "trail_arm_mult": 1.5, "trail_drop": 0.30, "eval_max_age_min": 120})
+    CFG.update({"gt_min_gap_s": 5.0, "poll_s": 75, "max_hold_h": 6, "trail_arm_mult": 1.5, "trail_drop": 0.30, "eval_max_age_min": 120})
 
 def now(): return time.time()
 def iso(t=None): return datetime.fromtimestamp(now() if t is None else t, timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")

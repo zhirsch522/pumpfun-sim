@@ -1,7 +1,7 @@
 {
-  "generated": "2026-11-05T11:20:41Z",
+  "generated": "2026-11-05T13:02:19Z",
   "started": "2026-11-04T13:02:09Z",
-  "hours_covered": 22.27,
+  "hours_covered": 23.98,
   "gap_minutes": 48.3,
   "gaps": [
     {
@@ -60,79 +60,80 @@
       "minutes": 3.0
     }
   ],
-  "done": false,
+  "done": true,
   "counts": {
-    "scan_pages_maxed": 189,
-    "ignored_non_pump": 28140,
-    "launches_seen": 1883,
-    "sampled": 949,
-    "evaluated": 1828,
-    "dead_pool_glitch": 193,
+    "scan_pages_maxed": 200,
+    "ignored_non_pump": 30160,
+    "launches_seen": 2000,
+    "sampled": 1007,
+    "evaluated": 1940,
+    "dead_pool_glitch": 200,
     "no_data": 40,
     "shadow_cap": 1
   },
   "api_calls": {
-    "gt": 7377,
-    "rpc": 660,
-    "err": 3670
+    "gt": 7886,
+    "rpc": 692,
+    "err": 4022
   },
   "rpc_fail": {},
   "glitch_exits_corrected": 0,
   "books": {
     "momo": {
-      "pnl_usd": -75.73,
-      "pnl_pct": -7.57,
-      "open": 1,
+      "pnl_usd": -93.95,
+      "pnl_pct": -9.39,
+      "open": 0,
       "counts": {
-        "kill:mcap_too_low": 190,
-        "kill:low_liquidity": 932,
-        "survivor": 259,
-        "trade": 107,
-        "kill:low_volume": 298,
+        "kill:mcap_too_low": 200,
+        "kill:low_liquidity": 996,
+        "survivor": 270,
+        "trade": 114,
+        "kill:low_volume": 317,
         "kill:concentrated_top10": 1,
-        "kill:dumping_m5": 63,
-        "kill:mcap_too_high": 30,
-        "skip:max_open": 152,
+        "kill:dumping_m5": 67,
+        "kill:mcap_too_high": 32,
+        "skip:max_open": 156,
         "kill:no_momentum_h1": 16,
         "kill:sell_heavy_m5": 13,
-        "kill:sell_heavy_h1": 18,
-        "kill:whale_wallet": 5,
+        "kill:sell_heavy_h1": 19,
+        "kill:whale_wallet": 6,
         "kill:few_trades": 3
       },
       "entries_holder_check_unknown": 0,
       "closed_trades": {
-        "n": 106,
-        "avg_pct": -3.74,
-        "median_pct": 1.97,
-        "win_rate": 51.9
+        "n": 114,
+        "avg_pct": -4.12,
+        "median_pct": 3.62,
+        "win_rate": 52.6
       },
       "rules_on_all_its_survivors": {
-        "n": 255,
-        "avg_pct": -8.33,
-        "median_pct": -4.57,
-        "win_rate": 43.1
+        "n": 269,
+        "avg_pct": -8.26,
+        "median_pct": -4.15,
+        "win_rate": 43.9
       },
       "random_hold_on_its_survivors": {
-        "n": 12900,
-        "avg_pct": 10.02,
-        "median_pct": 0.08,
+        "n": 13450,
+        "avg_pct": 8.49,
+        "median_pct": 0.19,
         "win_rate": 50.3
       },
       "wallet_20": {
         "start": 20.0,
-        "end": 3.0,
-        "return_pct": -85.0,
-        "max_drawdown_pct": 85.0,
-        "trades": 107,
+        "end": 2.19,
+        "return_pct": -89.0,
+        "max_drawdown_pct": 90.1,
+        "trades": 114,
         "stake_pct": 25
       },
-      "dead_pool_exits": 18,
+      "dead_pool_exits": 19,
       "exit_reasons": {
-        "volume_fade": 25,
-        "no_volume": 36,
-        "trail_stop": 5,
-        "stop_loss": 22,
-        "dead_pool": 18
+        "volume_fade": 28,
+        "dead_pool": 19,
+        "sim_end": 1,
+        "stop_loss": 24,
+        "trail_stop": 6,
+        "no_volume": 36
       },
       "best": [
         {
@@ -248,59 +249,78 @@
       ]
     },
     "loose": {
-      "pnl_usd": -184.93,
-      "pnl_pct": -18.49,
-      "open": 2,
+      "pnl_usd": -72.85,
+      "pnl_pct": -7.29,
+      "open": 0,
       "counts": {
-        "kill:mcap_too_low": 86,
-        "kill:low_liquidity": 866,
-        "survivor": 494,
-        "trade": 139,
-        "kill:low_volume": 271,
+        "kill:mcap_too_low": 92,
+        "kill:low_liquidity": 926,
+        "survivor": 513,
+        "trade": 149,
+        "kill:low_volume": 289,
         "kill:concentrated_top10": 1,
-        "kill:dumping_m5": 55,
-        "skip:max_open": 355,
-        "kill:mcap_too_high": 30,
+        "kill:dumping_m5": 58,
+        "skip:max_open": 364,
+        "kill:mcap_too_high": 32,
         "kill:sell_heavy_m5": 6,
-        "kill:sell_heavy_h1": 8,
-        "kill:whale_wallet": 11
+        "kill:sell_heavy_h1": 10,
+        "kill:whale_wallet": 13
       },
       "entries_holder_check_unknown": 0,
       "closed_trades": {
-        "n": 137,
-        "avg_pct": -6.74,
-        "median_pct": -5.04,
-        "win_rate": 40.1
+        "n": 149,
+        "avg_pct": -2.44,
+        "median_pct": -4.15,
+        "win_rate": 40.9
       },
       "rules_on_all_its_survivors": {
-        "n": 484,
-        "avg_pct": -7.1,
-        "median_pct": -5.3,
-        "win_rate": 43.6
+        "n": 512,
+        "avg_pct": -4.45,
+        "median_pct": -4.13,
+        "win_rate": 44.5
       },
       "random_hold_on_its_survivors": {
-        "n": 24600,
-        "avg_pct": 12.3,
-        "median_pct": -3.03,
-        "win_rate": 47.3
+        "n": 25600,
+        "avg_pct": 13.57,
+        "median_pct": -2.96,
+        "win_rate": 47.7
       },
       "wallet_20": {
         "start": 20.0,
-        "end": 0.27,
-        "return_pct": -98.7,
+        "end": 0.54,
+        "return_pct": -97.3,
         "max_drawdown_pct": 98.7,
-        "trades": 126,
+        "trades": 136,
         "stake_pct": 25
       },
       "dead_pool_exits": 27,
       "exit_reasons": {
-        "volume_fade": 21,
-        "no_volume": 41,
-        "trail_stop": 12,
-        "stop_loss": 36,
-        "dead_pool": 27
+        "volume_fade": 24,
+        "dead_pool": 27,
+        "sim_end": 1,
+        "stop_loss": 41,
+        "trail_stop": 13,
+        "no_volume": 43
       },
       "best": [
+        {
+          "ts": "2026-11-05T12:05:44Z",
+          "event": "exit",
+          "book": "loose",
+          "pool": "Tc9MNmMeSjKgeq28MJa355wmKG8dBpaaFCxJsbHLsjb",
+          "mint": "7XCosL1xg38Fi43wnDCPWnrjbFf1ta2HKzHX5B9JWCRn",
+          "name": "CR / SOL",
+          "reason": "no_volume",
+          "entry_t": "2026-11-05T11:49:09Z",
+          "hold_min": 16.6,
+          "entry_px": 2.351607432454409e-05,
+          "exit_px": 0.00019695538864323328,
+          "peak_px": 0.00019695538864323328,
+          "cost": 20.0,
+          "proceeds": 157.7355,
+          "pnl": 137.7355,
+          "pnl_pct": 688.68
+        },
         {
           "ts": "2026-11-04T20:58:27Z",
           "event": "exit",
@@ -336,24 +356,6 @@
           "proceeds": 57.3554,
           "pnl": 37.3554,
           "pnl_pct": 186.78
-        },
-        {
-          "ts": "2026-11-05T03:25:47Z",
-          "event": "exit",
-          "book": "loose",
-          "pool": "FsRog5Ds4eDcUwMfpAMsg5ASGqR2aW2ezBvJrupbkdpd",
-          "mint": "CoXpTLWJ3AhbycqRuEKEkxgqUdsdB9jxpv2ehoz6pump",
-          "name": "PONS / SOL",
-          "reason": "volume_fade",
-          "entry_t": "2026-11-05T03:10:05Z",
-          "hold_min": 15.7,
-          "entry_px": 5.934750787614246e-05,
-          "exit_px": 0.00020099603866463765,
-          "peak_px": 0.00020099603866463765,
-          "cost": 20.0,
-          "proceeds": 57.2079,
-          "pnl": 37.2079,
-          "pnl_pct": 186.04
         }
       ],
       "worst": [
@@ -414,51 +416,52 @@
       ]
     },
     "any": {
-      "pnl_usd": -248.48,
-      "pnl_pct": -24.85,
-      "open": 3,
+      "pnl_usd": -277.01,
+      "pnl_pct": -27.7,
+      "open": 0,
       "counts": {
-        "survivor": 161,
-        "trade": 161,
-        "not_checked_book_full": 1640,
-        "kill:whale_wallet": 23,
+        "survivor": 176,
+        "trade": 176,
+        "not_checked_book_full": 1736,
+        "kill:whale_wallet": 24,
         "kill:concentrated_top10": 2,
         "kill:mint_authority_set": 2
       },
       "entries_holder_check_unknown": 0,
       "closed_trades": {
-        "n": 158,
-        "avg_pct": -8.25,
+        "n": 176,
+        "avg_pct": -7.87,
         "median_pct": -5.83,
-        "win_rate": 28.5
+        "win_rate": 28.4
       },
       "rules_on_all_its_survivors": {
-        "n": 158,
-        "avg_pct": -8.25,
+        "n": 176,
+        "avg_pct": -7.87,
         "median_pct": -5.83,
-        "win_rate": 28.5
+        "win_rate": 28.4
       },
       "random_hold_on_its_survivors": {
-        "n": 8050,
-        "avg_pct": -8.64,
+        "n": 8800,
+        "avg_pct": -7.13,
         "median_pct": -5.83,
-        "win_rate": 26.6
+        "win_rate": 26.7
       },
       "wallet_20": {
         "start": 20.0,
-        "end": 0.25,
-        "return_pct": -98.8,
+        "end": 0.2,
+        "return_pct": -99.0,
         "max_drawdown_pct": 99.1,
-        "trades": 161,
+        "trades": 176,
         "stake_pct": 25
       },
-      "dead_pool_exits": 13,
+      "dead_pool_exits": 14,
       "exit_reasons": {
-        "volume_fade": 17,
-        "no_volume": 95,
-        "trail_stop": 7,
-        "stop_loss": 26,
-        "dead_pool": 13
+        "volume_fade": 20,
+        "dead_pool": 14,
+        "sim_end": 3,
+        "stop_loss": 28,
+        "trail_stop": 8,
+        "no_volume": 103
       },
       "best": [
         {
@@ -575,25 +578,25 @@
     }
   },
   "all_launch_sample": {
-    "launches_sampled": 949,
-    "with_entry_price": 941,
+    "launches_sampled": 1007,
+    "with_entry_price": 994,
     "random_exit_within_3h": {
-      "n": 46800,
-      "avg_pct": -8.74,
+      "n": 49650,
+      "avg_pct": -6.77,
       "median_pct": -5.83,
-      "win_rate": 24.5
+      "win_rate": 25.0
     },
     "hold_1h": {
-      "n": 936,
-      "avg_pct": -11.51,
+      "n": 993,
+      "avg_pct": -9.42,
       "median_pct": -5.83,
-      "win_rate": 22.2
+      "win_rate": 22.9
     },
     "hold_3h": {
-      "n": 936,
-      "avg_pct": -15.27,
+      "n": 993,
+      "avg_pct": -13.42,
       "median_pct": -5.83,
-      "win_rate": 21.3
+      "win_rate": 21.8
     }
   }
 }

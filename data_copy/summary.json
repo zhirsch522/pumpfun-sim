@@ -1,7 +1,7 @@
 {
-  "generated": "2026-11-05T19:04:19Z",
+  "generated": "2026-11-05T20:51:38Z",
   "started": "2026-11-04T13:02:11Z",
-  "hours_covered": 29.98,
+  "hours_covered": 31.76,
   "gap_minutes": 219.9,
   "gaps": [
     {
@@ -275,62 +275,63 @@
       "minutes": 5.3
     }
   ],
-  "done": false,
+  "done": true,
   "counts": {
-    "scan_pages_maxed": 409,
-    "launches_seen": 25429,
-    "ignored_non_pump": 4505,
-    "hot_added": 3970,
-    "wallets_tracked": 54060,
-    "trades_read": 446982,
-    "signal:random_wallet": 833,
+    "scan_pages_maxed": 438,
+    "launches_seen": 26958,
+    "ignored_non_pump": 4834,
+    "hot_added": 4199,
+    "wallets_tracked": 53474,
+    "trades_read": 470503,
+    "signal:random_wallet": 850,
     "trades_fail": 10,
-    "dead_pool_glitch": 32,
-    "signal:leaders": 224
+    "dead_pool_glitch": 33,
+    "signal:leaders": 241
   },
   "api_calls": {
-    "gt": 8996,
+    "gt": 9532,
     "rpc": 0,
-    "err": 4263
+    "err": 4475
   },
   "rpc_fail": {},
   "glitch_exits_corrected": 0,
   "books": {
     "leaders": {
-      "pnl_usd": -61.03,
-      "pnl_pct": -6.1,
-      "open": 1,
+      "pnl_usd": -91.69,
+      "pnl_pct": -9.17,
+      "open": 0,
       "counts": {
-        "trade": 69,
-        "skip:already_in": 145,
+        "trade": 74,
+        "skip:already_in": 157,
         "skip:max_open": 8,
         "skip:no_quote": 2
       },
       "entries_holder_check_unknown": 0,
       "closed_trades": {
-        "n": 68,
-        "avg_pct": -4.4,
+        "n": 74,
+        "avg_pct": -6.19,
         "median_pct": -5.83,
-        "win_rate": 39.7
+        "win_rate": 37.8
       },
       "rules_on_all_its_survivors": null,
       "random_hold_on_its_survivors": null,
       "wallet_20": {
         "start": 20.0,
-        "end": 0.83,
-        "return_pct": -95.8,
-        "max_drawdown_pct": 98.7,
-        "trades": 69,
+        "end": 0.53,
+        "return_pct": -97.3,
+        "max_drawdown_pct": 99.1,
+        "trades": 74,
         "stake_pct": 25
       },
-      "dead_pool_exits": 12,
+      "dead_pool_exits": 13,
       "exit_reasons": {
-        "trail_stop": 1,
-        "stop_loss": 12,
-        "no_volume": 27,
-        "volume_fade": 9,
         "leader_exit": 7,
-        "dead_pool": 12
+        "stop_loss": 13,
+        "trail_stop": 1,
+        "sim_end": 1,
+        "dead_pool": 13,
+        "volume_fade": 9,
+        "no_volume": 30
       },
       "best": [
         {
@@ -446,40 +447,40 @@
       ]
     },
     "random_wallet": {
-      "pnl_usd": -16.74,
-      "pnl_pct": -1.67,
-      "open": 3,
+      "pnl_usd": -55.29,
+      "pnl_pct": -5.53,
+      "open": 0,
       "counts": {
-        "trade": 195,
-        "skip:already_in": 335,
-        "skip:max_open": 299,
+        "trade": 200,
+        "skip:already_in": 340,
+        "skip:max_open": 306,
         "skip:no_quote": 4
       },
       "entries_holder_check_unknown": 0,
       "closed_trades": {
-        "n": 192,
-        "avg_pct": -0.44,
+        "n": 200,
+        "avg_pct": -1.38,
         "median_pct": -5.83,
-        "win_rate": 34.9
+        "win_rate": 34.5
       },
       "rules_on_all_its_survivors": null,
       "random_hold_on_its_survivors": null,
       "wallet_20": {
         "start": 20.0,
-        "end": 0.07,
-        "return_pct": -99.7,
-        "max_drawdown_pct": 99.7,
+        "end": 0.04,
+        "return_pct": -99.8,
+        "max_drawdown_pct": 99.8,
         "trades": 186,
         "stake_pct": 25
       },
       "dead_pool_exits": 20,
       "exit_reasons": {
-        "trail_stop": 13,
-        "stop_loss": 42,
-        "no_volume": 68,
-        "volume_fade": 32,
         "leader_exit": 17,
-        "dead_pool": 20
+        "stop_loss": 45,
+        "trail_stop": 14,
+        "dead_pool": 20,
+        "volume_fade": 34,
+        "no_volume": 70
       },
       "best": [
         {
@@ -604,42 +605,42 @@
   },
   "copy": {
     "signals": {
-      "random_wallet": 833,
-      "leaders": 224
+      "random_wallet": 850,
+      "leaders": 241
     },
-    "median_lag_s": 317.0,
-    "hot_pools_added": 3970,
-    "trades_read": 446982,
+    "median_lag_s": 321.5,
+    "hot_pools_added": 4199,
+    "trades_read": 470503,
     "wallets_last_save": {
-      "ts": "2026-11-05T19:04:16Z",
+      "ts": "2026-11-05T20:51:35Z",
       "event": "wallets_saved",
-      "wallets": 54023,
-      "leaders": 201
+      "wallets": 52661,
+      "leaders": 205
     },
     "books": {
       "leaders": {
-        "closed": 68,
-        "pnl_closed_usd": -59.87,
+        "closed": 74,
+        "pnl_closed_usd": -91.69,
         "best_trade_usd": 193.21,
         "best_trade_name": "NEX Ai / SOL",
-        "pnl_without_best_usd": -253.07,
-        "median_price_vs_leader_pct": 15.2,
+        "pnl_without_best_usd": -284.9,
+        "median_price_vs_leader_pct": 16.5,
         "share_paid_more_than_leader": 0.84,
-        "median_lag_s": 366.5,
-        "avg_pnl_pct_faster_half": -23.9,
-        "avg_pnl_pct_slower_half": 15.1
+        "median_lag_s": 376.0,
+        "avg_pnl_pct_faster_half": -19.7,
+        "avg_pnl_pct_slower_half": 7.3
       },
       "random_wallet": {
-        "closed": 192,
-        "pnl_closed_usd": -16.75,
+        "closed": 200,
+        "pnl_closed_usd": -55.29,
         "best_trade_usd": 193.21,
         "best_trade_name": "NEX Ai / SOL",
-        "pnl_without_best_usd": -209.95,
-        "median_price_vs_leader_pct": 9.8,
+        "pnl_without_best_usd": -248.49,
+        "median_price_vs_leader_pct": 9.9,
         "share_paid_more_than_leader": 0.74,
         "median_lag_s": 274.0,
-        "avg_pnl_pct_faster_half": -4.8,
-        "avg_pnl_pct_slower_half": 3.9
+        "avg_pnl_pct_faster_half": -5.3,
+        "avg_pnl_pct_slower_half": 2.6
       }
     }
   }

@@ -1,8 +1,8 @@
 {
-  "generated": "2026-11-05T00:16:32Z",
+  "generated": "2026-11-05T05:49:01Z",
   "started": "2026-11-04T13:02:09Z",
-  "hours_covered": 11.21,
-  "gap_minutes": 16.4,
+  "hours_covered": 16.74,
+  "gap_minutes": 35.9,
   "gaps": [
     {
       "from": "2026-11-04T18:08:09Z",
@@ -23,81 +23,96 @@
       "from": "2026-11-04T20:57:24Z",
       "to": "2026-11-04T21:01:09Z",
       "minutes": 3.8
+    },
+    {
+      "from": "2026-11-05T01:57:48Z",
+      "to": "2026-11-05T02:05:47Z",
+      "minutes": 8.0
+    },
+    {
+      "from": "2026-11-05T04:56:04Z",
+      "to": "2026-11-05T05:03:41Z",
+      "minutes": 7.6
+    },
+    {
+      "from": "2026-11-05T05:03:41Z",
+      "to": "2026-11-05T05:07:34Z",
+      "minutes": 3.9
     }
   ],
   "done": false,
   "counts": {
-    "scan_pages_maxed": 123,
-    "ignored_non_pump": 16657,
-    "launches_seen": 1013,
-    "sampled": 513,
-    "evaluated": 966,
-    "dead_pool_glitch": 87,
-    "no_data": 34,
+    "scan_pages_maxed": 158,
+    "ignored_non_pump": 22323,
+    "launches_seen": 1464,
+    "sampled": 752,
+    "evaluated": 1396,
+    "dead_pool_glitch": 132,
+    "no_data": 40,
     "shadow_cap": 1
   },
   "api_calls": {
-    "gt": 4042,
-    "rpc": 329,
-    "err": 1404
+    "gt": 5719,
+    "rpc": 497,
+    "err": 2515
   },
   "rpc_fail": {},
   "glitch_exits_corrected": 0,
   "books": {
     "momo": {
-      "pnl_usd": -12.54,
-      "pnl_pct": -1.25,
-      "open": 0,
+      "pnl_usd": -8.38,
+      "pnl_pct": -0.84,
+      "open": 2,
       "counts": {
-        "kill:mcap_too_low": 94,
-        "kill:low_liquidity": 489,
-        "survivor": 131,
-        "trade": 44,
-        "kill:low_volume": 166,
+        "kill:mcap_too_low": 135,
+        "kill:low_liquidity": 707,
+        "survivor": 194,
+        "trade": 74,
+        "kill:low_volume": 233,
         "kill:concentrated_top10": 1,
-        "kill:dumping_m5": 37,
-        "kill:mcap_too_high": 14,
-        "skip:max_open": 87,
-        "kill:no_momentum_h1": 10,
-        "kill:sell_heavy_m5": 9,
-        "kill:sell_heavy_h1": 11,
-        "kill:whale_wallet": 3,
-        "kill:few_trades": 1
+        "kill:dumping_m5": 57,
+        "kill:mcap_too_high": 24,
+        "skip:max_open": 120,
+        "kill:no_momentum_h1": 14,
+        "kill:sell_heavy_m5": 12,
+        "kill:sell_heavy_h1": 13,
+        "kill:whale_wallet": 4,
+        "kill:few_trades": 2
       },
       "entries_holder_check_unknown": 0,
       "closed_trades": {
-        "n": 44,
-        "avg_pct": -1.42,
-        "median_pct": -3.54,
-        "win_rate": 47.7
+        "n": 72,
+        "avg_pct": -0.84,
+        "median_pct": 1.95,
+        "win_rate": 51.4
       },
       "rules_on_all_its_survivors": {
-        "n": 130,
-        "avg_pct": -15.16,
-        "median_pct": -5.83,
-        "win_rate": 37.7
+        "n": 191,
+        "avg_pct": -12.27,
+        "median_pct": -5.78,
+        "win_rate": 41.4
       },
       "random_hold_on_its_survivors": {
-        "n": 6500,
-        "avg_pct": 4.26,
-        "median_pct": -3.62,
-        "win_rate": 44.3
+        "n": 9650,
+        "avg_pct": 4.7,
+        "median_pct": -0.23,
+        "win_rate": 48.6
       },
       "wallet_20": {
         "start": 20.0,
-        "end": 12.28,
-        "return_pct": -38.6,
+        "end": 11.31,
+        "return_pct": -43.4,
         "max_drawdown_pct": 73.7,
-        "trades": 44,
+        "trades": 74,
         "stake_pct": 25
       },
-      "dead_pool_exits": 6,
+      "dead_pool_exits": 11,
       "exit_reasons": {
-        "dead_pool": 6,
-        "stop_loss": 12,
-        "trail_stop": 4,
-        "no_volume": 14,
-        "volume_fade": 8
+        "trail_stop": 5,
+        "stop_loss": 15,
+        "no_volume": 24,
+        "volume_fade": 17,
+        "dead_pool": 11
       },
       "best": [
         {
@@ -213,57 +228,57 @@
       ]
     },
     "loose": {
-      "pnl_usd": -105.1,
-      "pnl_pct": -10.51,
-      "open": 0,
+      "pnl_usd": -43.34,
+      "pnl_pct": -4.33,
+      "open": 3,
       "counts": {
-        "kill:mcap_too_low": 60,
-        "kill:low_liquidity": 446,
-        "survivor": 257,
-        "trade": 64,
-        "kill:low_volume": 142,
+        "kill:mcap_too_low": 72,
+        "kill:low_liquidity": 654,
+        "survivor": 372,
+        "trade": 101,
+        "kill:low_volume": 206,
         "kill:concentrated_top10": 1,
-        "kill:dumping_m5": 33,
-        "skip:max_open": 193,
-        "kill:mcap_too_high": 14,
-        "kill:sell_heavy_m5": 3,
-        "kill:sell_heavy_h1": 4,
-        "kill:whale_wallet": 6
+        "kill:dumping_m5": 48,
+        "skip:max_open": 271,
+        "kill:mcap_too_high": 24,
+        "kill:sell_heavy_m5": 4,
+        "kill:sell_heavy_h1": 7,
+        "kill:whale_wallet": 8
       },
       "entries_holder_check_unknown": 0,
       "closed_trades": {
-        "n": 64,
-        "avg_pct": -8.21,
-        "median_pct": -5.7,
-        "win_rate": 35.9
+        "n": 98,
+        "avg_pct": -2.45,
+        "median_pct": -4.47,
+        "win_rate": 41.8
       },
       "rules_on_all_its_survivors": {
-        "n": 255,
-        "avg_pct": -10.99,
+        "n": 364,
+        "avg_pct": -8.84,
         "median_pct": -5.83,
-        "win_rate": 40.0
+        "win_rate": 41.8
       },
       "random_hold_on_its_survivors": {
-        "n": 12800,
-        "avg_pct": 4.1,
-        "median_pct": -5.83,
-        "win_rate": 43.5
+        "n": 18550,
+        "avg_pct": 3.42,
+        "median_pct": -4.22,
+        "win_rate": 45.2
       },
       "wallet_20": {
         "start": 20.0,
-        "end": 1.65,
-        "return_pct": -91.7,
+        "end": 2.11,
+        "return_pct": -89.5,
         "max_drawdown_pct": 94.7,
-        "trades": 51,
+        "trades": 88,
         "stake_pct": 25
       },
-      "dead_pool_exits": 14,
+      "dead_pool_exits": 18,
       "exit_reasons": {
-        "dead_pool": 14,
-        "stop_loss": 20,
-        "trail_stop": 9,
-        "no_volume": 15,
-        "volume_fade": 6
+        "trail_stop": 10,
+        "stop_loss": 26,
+        "no_volume": 31,
+        "volume_fade": 13,
+        "dead_pool": 18
       },
       "best": [
         {
@@ -285,6 +300,24 @@
           "pnl_pct": 373.65
         },
         {
+          "ts": "2026-11-05T03:25:47Z",
+          "event": "exit",
+          "book": "loose",
+          "pool": "FsRog5Ds4eDcUwMfpAMsg5ASGqR2aW2ezBvJrupbkdpd",
+          "mint": "CoXpTLWJ3AhbycqRuEKEkxgqUdsdB9jxpv2ehoz6pump",
+          "name": "PONS / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-05T03:10:05Z",
+          "hold_min": 15.7,
+          "entry_px": 5.934750787614246e-05,
+          "exit_px": 0.00020099603866463765,
+          "peak_px": 0.00020099603866463765,
+          "cost": 20.0,
+          "proceeds": 57.2079,
+          "pnl": 37.2079,
+          "pnl_pct": 186.04
+        },
+        {
           "ts": "2026-11-04T20:29:03Z",
           "event": "exit",
           "book": "loose",
@@ -301,24 +334,6 @@
           "proceeds": 48.6996,
           "pnl": 28.6996,
           "pnl_pct": 143.5
-        },
-        {
-          "ts": "2026-11-04T14:56:55Z",
-          "event": "exit",
-          "book": "loose",
-          "pool": "e2EbbX6NFAb5wsf9PAUVNV2up59PVWpG6E3wi5d6Apd",
-          "mint": "6iyDc4uTS1oB16m5fcYSGBhnigbvvk9PGDxxnQWfpump",
-          "name": "GTA 6 Coin / SOL",
-          "reason": "volume_fade",
-          "entry_t": "2026-11-04T14:28:53Z",
-          "hold_min": 28.0,
-          "entry_px": 0.0001441813975993502,
-          "exit_px": 0.00040074670219552064,
-          "peak_px": 0.00040074670219552064,
-          "cost": 20.0,
-          "proceeds": 45.8242,
-          "pnl": 25.8242,
-          "pnl_pct": 129.12
         }
       ],
       "worst": [
@@ -379,52 +394,89 @@
       ]
     },
     "any": {
-      "pnl_usd": -104.54,
-      "pnl_pct": -10.45,
-      "open": 0,
+      "pnl_usd": -160.34,
+      "pnl_pct": -16.03,
+      "open": 3,
       "counts": {
-        "survivor": 61,
-        "trade": 61,
-        "not_checked_book_full": 896,
-        "kill:whale_wallet": 8,
-        "kill:concentrated_top10": 1
+        "survivor": 115,
+        "trade": 115,
+        "not_checked_book_full": 1264,
+        "kill:whale_wallet": 13,
+        "kill:concentrated_top10": 2,
+        "kill:mint_authority_set": 2
       },
       "entries_holder_check_unknown": 0,
       "closed_trades": {
-        "n": 61,
-        "avg_pct": -8.57,
+        "n": 112,
+        "avg_pct": -7.13,
         "median_pct": -5.83,
-        "win_rate": 27.9
+        "win_rate": 27.7
       },
       "rules_on_all_its_survivors": {
-        "n": 61,
-        "avg_pct": -8.57,
+        "n": 112,
+        "avg_pct": -7.13,
         "median_pct": -5.83,
-        "win_rate": 27.9
+        "win_rate": 27.7
       },
       "random_hold_on_its_survivors": {
-        "n": 3050,
-        "avg_pct": -10.22,
+        "n": 5750,
+        "avg_pct": -12.25,
         "median_pct": -5.83,
-        "win_rate": 26.2
+        "win_rate": 24.9
       },
       "wallet_20": {
         "start": 20.0,
-        "end": 3.63,
-        "return_pct": -81.9,
-        "max_drawdown_pct": 84.0,
-        "trades": 61,
+        "end": 1.01,
+        "return_pct": -95.0,
+        "max_drawdown_pct": 95.0,
+        "trades": 115,
         "stake_pct": 25
       },
-      "dead_pool_exits": 4,
+      "dead_pool_exits": 6,
       "exit_reasons": {
-        "dead_pool": 4,
-        "stop_loss": 10,
-        "no_volume": 38,
-        "trail_stop": 3,
-        "volume_fade": 6
+        "trail_stop": 5,
+        "stop_loss": 21,
+        "no_volume": 67,
+        "volume_fade": 13,
+        "dead_pool": 6
       },
       "best": [
+        {
+          "ts": "2026-11-05T02:08:40Z",
+          "event": "exit",
+          "book": "any",
+          "pool": "6wj9doSBG4aRewMFqWoatkAURqmppxw6VXPFgrrNxnG8",
+          "mint": "9v5fYno4ZVbkaCxGTqzFgHwD7zE3YWGj9HKjK1hHYv47",
+          "name": "mspaint / SOL",
+          "reason": "no_volume",
+          "entry_t": "2026-11-05T01:46:06Z",
+          "hold_min": 22.6,
+          "entry_px": 1.34235206465371e-07,
+          "exit_px": 5.60529281241097e-07,
+          "peak_px": 5.60529281241097e-07,
+          "cost": 20.0,
+          "proceeds": 66.592,
+          "pnl": 46.592,
+          "pnl_pct": 232.96
+        },
+        {
+          "ts": "2026-11-05T03:25:47Z",
+          "event": "exit",
+          "book": "any",
+          "pool": "FsRog5Ds4eDcUwMfpAMsg5ASGqR2aW2ezBvJrupbkdpd",
+          "mint": "CoXpTLWJ3AhbycqRuEKEkxgqUdsdB9jxpv2ehoz6pump",
+          "name": "PONS / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-05T03:10:05Z",
+          "hold_min": 15.7,
+          "entry_px": 5.934750787614246e-05,
+          "exit_px": 0.00020099603866463765,
+          "peak_px": 0.00020099603866463765,
+          "cost": 20.0,
+          "proceeds": 57.2079,
+          "pnl": 37.2079,
+          "pnl_pct": 186.04
+        },
         {
           "ts": "2026-11-04T16:53:56Z",
           "event": "exit",
@@ -442,42 +494,6 @@
           "proceeds": 42.8451,
           "pnl": 22.8451,
           "pnl_pct": 114.23
-        },
-        {
-          "ts": "2026-11-04T21:15:24Z",
-          "event": "exit",
-          "book": "any",
-          "pool": "9fqLisfEd6Epbhb2VkfKAVVBin3FGuNX66qJwaEdcf3e",
-          "mint": "DkcGiWBAQkUWkdDQWYBVc8RfLvm9tfMatcghXaBv5u2A",
-          "name": "Aren / SOL",
-          "reason": "trail_stop",
-          "entry_t": "2026-11-04T21:02:14Z",
-          "hold_min": 13.2,
-          "entry_px": 0.00024290502004465183,
-          "exit_px": 0.0005493997997055421,
-          "peak_px": 0.0008277073311906173,
-          "cost": 20.0,
-          "proceeds": 42.1646,
-          "pnl": 22.1646,
-          "pnl_pct": 110.82
-        },
-        {
-          "ts": "2026-11-04T15:08:55Z",
-          "event": "exit",
-          "book": "any",
-          "pool": "3y8Zx16WS4Mh41mRnvMKjocTHxMu8T4cRxRo6V32RpSx",
-          "mint": "62ebEdprsnnHLXWX11wZN3r3ZD7cjG3HJp6myC75WL4",
-          "name": "FOREVER / SOL",
-          "reason": "volume_fade",
-          "entry_t": "2026-11-04T14:37:40Z",
-          "hold_min": 31.3,
-          "entry_px": 3.024212071621268e-05,
-          "exit_px": 5.858604200478121e-05,
-          "peak_px": 6.062250112378812e-05,
-          "cost": 20.0,
-          "proceeds": 37.1139,
-          "pnl": 17.1139,
-          "pnl_pct": 85.57
         }
       ],
       "worst": [
@@ -539,25 +555,25 @@
     }
   },
   "all_launch_sample": {
-    "launches_sampled": 513,
-    "with_entry_price": 509,
+    "launches_sampled": 752,
+    "with_entry_price": 739,
     "random_exit_within_3h": {
-      "n": 25150,
-      "avg_pct": -13.15,
+      "n": 36600,
+      "avg_pct": -12.2,
       "median_pct": -5.83,
-      "win_rate": 23.5
+      "win_rate": 24.1
     },
     "hold_1h": {
-      "n": 503,
-      "avg_pct": -15.11,
+      "n": 732,
+      "avg_pct": -14.27,
       "median_pct": -5.83,
-      "win_rate": 20.9
+      "win_rate": 21.9
     },
     "hold_3h": {
-      "n": 503,
-      "avg_pct": -21.37,
+      "n": 732,
+      "avg_pct": -19.13,
       "median_pct": -5.83,
-      "win_rate": 19.5
+      "win_rate": 20.6
     }
   }
 }

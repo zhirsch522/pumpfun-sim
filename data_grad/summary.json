@@ -1,88 +1,141 @@
 {
-  "generated": "2026-11-04T18:45:30Z",
+  "generated": "2026-11-05T00:16:32Z",
   "started": "2026-11-04T13:02:09Z",
-  "hours_covered": 5.7,
-  "gap_minutes": 5.9,
+  "hours_covered": 11.21,
+  "gap_minutes": 16.4,
   "gaps": [
     {
       "from": "2026-11-04T18:08:09Z",
       "to": "2026-11-04T18:14:06Z",
       "minutes": 5.9
+    },
+    {
+      "from": "2026-11-04T19:06:18Z",
+      "to": "2026-11-04T19:09:50Z",
+      "minutes": 3.5
+    },
+    {
+      "from": "2026-11-04T19:15:57Z",
+      "to": "2026-11-04T19:19:10Z",
+      "minutes": 3.2
+    },
+    {
+      "from": "2026-11-04T20:57:24Z",
+      "to": "2026-11-04T21:01:09Z",
+      "minutes": 3.8
     }
   ],
   "done": false,
   "counts": {
-    "scan_pages_maxed": 42,
-    "ignored_non_pump": 8581,
-    "launches_seen": 583,
-    "sampled": 296,
-    "evaluated": 546,
-    "dead_pool_glitch": 55,
-    "no_data": 26
+    "scan_pages_maxed": 123,
+    "ignored_non_pump": 16657,
+    "launches_seen": 1013,
+    "sampled": 513,
+    "evaluated": 966,
+    "dead_pool_glitch": 87,
+    "no_data": 34,
+    "shadow_cap": 1
   },
   "api_calls": {
-    "gt": 1945,
-    "rpc": 190,
-    "err": 592
+    "gt": 4042,
+    "rpc": 329,
+    "err": 1404
   },
   "rpc_fail": {},
   "glitch_exits_corrected": 0,
   "books": {
     "momo": {
-      "pnl_usd": -68.84,
-      "pnl_pct": -6.88,
-      "open": 3,
+      "pnl_usd": -12.54,
+      "pnl_pct": -1.25,
+      "open": 0,
       "counts": {
-        "kill:mcap_too_low": 62,
-        "kill:low_liquidity": 268,
-        "survivor": 84,
-        "trade": 24,
-        "kill:low_volume": 87,
+        "kill:mcap_too_low": 94,
+        "kill:low_liquidity": 489,
+        "survivor": 131,
+        "trade": 44,
+        "kill:low_volume": 166,
         "kill:concentrated_top10": 1,
-        "kill:dumping_m5": 19,
-        "kill:mcap_too_high": 9,
-        "skip:max_open": 60,
-        "kill:no_momentum_h1": 5,
-        "kill:sell_heavy_m5": 3,
-        "kill:sell_heavy_h1": 6,
-        "kill:whale_wallet": 2
+        "kill:dumping_m5": 37,
+        "kill:mcap_too_high": 14,
+        "skip:max_open": 87,
+        "kill:no_momentum_h1": 10,
+        "kill:sell_heavy_m5": 9,
+        "kill:sell_heavy_h1": 11,
+        "kill:whale_wallet": 3,
+        "kill:few_trades": 1
       },
       "entries_holder_check_unknown": 0,
       "closed_trades": {
-        "n": 21,
-        "avg_pct": -17.88,
-        "median_pct": -16.22,
-        "win_rate": 38.1
+        "n": 44,
+        "avg_pct": -1.42,
+        "median_pct": -3.54,
+        "win_rate": 47.7
       },
       "rules_on_all_its_survivors": {
-        "n": 69,
-        "avg_pct": -23.27,
-        "median_pct": -31.78,
-        "win_rate": 36.2
+        "n": 130,
+        "avg_pct": -15.16,
+        "median_pct": -5.83,
+        "win_rate": 37.7
       },
       "random_hold_on_its_survivors": {
-        "n": 4100,
-        "avg_pct": -4.99,
-        "median_pct": -5.83,
-        "win_rate": 41.0
+        "n": 6500,
+        "avg_pct": 4.26,
+        "median_pct": -3.62,
+        "win_rate": 44.3
       },
       "wallet_20": {
         "start": 20.0,
-        "end": 6.61,
-        "return_pct": -66.9,
+        "end": 12.28,
+        "return_pct": -38.6,
         "max_drawdown_pct": 73.7,
-        "trades": 24,
+        "trades": 44,
         "stake_pct": 25
       },
-      "dead_pool_exits": 5,
+      "dead_pool_exits": 6,
       "exit_reasons": {
-        "dead_pool": 5,
-        "stop_loss": 7,
-        "trail_stop": 2,
-        "volume_fade": 3,
-        "no_volume": 4
+        "dead_pool": 6,
+        "stop_loss": 12,
+        "trail_stop": 4,
+        "no_volume": 14,
+        "volume_fade": 8
       },
       "best": [
+        {
+          "ts": "2026-11-04T20:29:03Z",
+          "event": "exit",
+          "book": "momo",
+          "pool": "3sKjrTCuMVzwfMTYpqmwmGXbd27AGBVGR7qJotibUNMQ",
+          "mint": "j1uZqrtXGPv9qM4t9Q9SJHBpoLu5XNQkqALkQdW2PYQ",
+          "name": "Green Cat / SOL",
+          "reason": "no_volume",
+          "entry_t": "2026-11-04T19:31:15Z",
+          "hold_min": 57.8,
+          "entry_px": 2.8879792055316085e-05,
+          "exit_px": 8.980844940472412e-05,
+          "peak_px": 8.980844940472412e-05,
+          "cost": 20.0,
+          "proceeds": 48.6996,
+          "pnl": 28.6996,
+          "pnl_pct": 143.5
+        },
+        {
+          "ts": "2026-11-04T20:08:11Z",
+          "event": "exit",
+          "book": "momo",
+          "pool": "9NPxTD77ibCq5kTCDDf63FNTNyqmdetxTje9secvG7Na",
+          "mint": "FrEUQfWvn3M4e32V2Y3nRq9txPi3r8uDh1N2jDVKNVnw",
+          "name": "AMD / SOL",
+          "reason": "no_volume",
+          "entry_t": "2026-11-04T19:37:25Z",
+          "hold_min": 30.8,
+          "entry_px": 4.27093591199902e-05,
+          "exit_px": 0.00011043375793367737,
+          "peak_px": 0.00011043375793367737,
+          "cost": 20.0,
+          "proceeds": 44.9907,
+          "pnl": 24.9907,
+          "pnl_pct": 124.95
+        },
         {
           "ts": "2026-11-04T14:54:51Z",
           "event": "exit",
@@ -100,42 +153,6 @@
           "proceeds": 44.3981,
           "pnl": 24.3981,
           "pnl_pct": 121.99
-        },
-        {
-          "ts": "2026-11-04T16:53:56Z",
-          "event": "exit",
-          "book": "momo",
-          "pool": "3nsUWwsnxf5WdEqyJQaqm8z2MfqffijsUNSViFZX5vBf",
-          "mint": "GgqwBBmBhWy8jND5ZT5XjUYd45yaR5tg5QGihpCwdgis",
-          "name": "P C / SOL",
-          "reason": "no_volume",
-          "entry_t": "2026-11-04T16:25:56Z",
-          "hold_min": 28.0,
-          "entry_px": 4.295761978971608e-05,
-          "exit_px": 0.00010720471599324863,
-          "peak_px": 0.00010748046445458046,
-          "cost": 20.0,
-          "proceeds": 42.8451,
-          "pnl": 22.8451,
-          "pnl_pct": 114.23
-        },
-        {
-          "ts": "2026-11-04T14:17:43Z",
-          "event": "exit",
-          "book": "momo",
-          "pool": "51gfctv3K351dQQ9gJFUBGZRF8XGKnQxsmKrmm6s4dC",
-          "mint": "6td35L7ghqn52svyzQbQ3ZPtrsYVW6xrBYfpoM7Ta1WK",
-          "name": "\u6211\u753b\u5730\u4e3a\u7262 / SOL",
-          "reason": "volume_fade",
-          "entry_t": "2026-11-04T13:44:45Z",
-          "hold_min": 33.0,
-          "entry_px": 3.2321719312874575e-05,
-          "exit_px": 5.382850481194569e-05,
-          "peak_px": 5.429285066300723e-05,
-          "cost": 20.0,
-          "proceeds": 31.3649,
-          "pnl": 11.3649,
-          "pnl_pct": 56.82
         }
       ],
       "worst": [
@@ -196,59 +213,95 @@
       ]
     },
     "loose": {
-      "pnl_usd": -151.59,
-      "pnl_pct": -15.16,
-      "open": 3,
+      "pnl_usd": -105.1,
+      "pnl_pct": -10.51,
+      "open": 0,
       "counts": {
-        "kill:mcap_too_low": 42,
-        "kill:low_liquidity": 243,
-        "survivor": 159,
-        "trade": 37,
-        "kill:low_volume": 66,
+        "kill:mcap_too_low": 60,
+        "kill:low_liquidity": 446,
+        "survivor": 257,
+        "trade": 64,
+        "kill:low_volume": 142,
         "kill:concentrated_top10": 1,
-        "kill:dumping_m5": 18,
-        "skip:max_open": 122,
-        "kill:mcap_too_high": 9,
-        "kill:sell_heavy_m5": 2,
-        "kill:sell_heavy_h1": 2,
-        "kill:whale_wallet": 4
+        "kill:dumping_m5": 33,
+        "skip:max_open": 193,
+        "kill:mcap_too_high": 14,
+        "kill:sell_heavy_m5": 3,
+        "kill:sell_heavy_h1": 4,
+        "kill:whale_wallet": 6
       },
       "entries_holder_check_unknown": 0,
       "closed_trades": {
-        "n": 34,
-        "avg_pct": -21.97,
-        "median_pct": -7.55,
-        "win_rate": 26.5
+        "n": 64,
+        "avg_pct": -8.21,
+        "median_pct": -5.7,
+        "win_rate": 35.9
       },
       "rules_on_all_its_survivors": {
-        "n": 134,
-        "avg_pct": -18.91,
-        "median_pct": -26.48,
-        "win_rate": 35.8
+        "n": 255,
+        "avg_pct": -10.99,
+        "median_pct": -5.83,
+        "win_rate": 40.0
       },
       "random_hold_on_its_survivors": {
-        "n": 7750,
-        "avg_pct": -3.77,
-        "median_pct": -5.14,
-        "win_rate": 42.6
+        "n": 12800,
+        "avg_pct": 4.1,
+        "median_pct": -5.83,
+        "win_rate": 43.5
       },
       "wallet_20": {
         "start": 20.0,
-        "end": 1.43,
-        "return_pct": -92.9,
-        "max_drawdown_pct": 92.9,
-        "trades": 26,
+        "end": 1.65,
+        "return_pct": -91.7,
+        "max_drawdown_pct": 94.7,
+        "trades": 51,
         "stake_pct": 25
       },
-      "dead_pool_exits": 10,
+      "dead_pool_exits": 14,
       "exit_reasons": {
-        "dead_pool": 10,
-        "stop_loss": 12,
-        "trail_stop": 6,
-        "volume_fade": 3,
-        "no_volume": 3
+        "dead_pool": 14,
+        "stop_loss": 20,
+        "trail_stop": 9,
+        "no_volume": 15,
+        "volume_fade": 6
       },
       "best": [
+        {
+          "ts": "2026-11-04T20:58:27Z",
+          "event": "exit",
+          "book": "loose",
+          "pool": "Gs1zsHhpjbbQbX83UZ1iWLPNnbQHd87s8SzffEzybrmu",
+          "mint": "HkoyQBc6poa6GhA9WBbc2LkTA2zqN93QsEu8JoVBeEDZ",
+          "name": "AI / SOL",
+          "reason": "volume_fade",
+          "entry_t": "2026-11-04T20:33:05Z",
+          "hold_min": 25.4,
+          "entry_px": 1.732223152057468e-05,
+          "exit_px": 0.0001348275432745491,
+          "peak_px": 0.0001348275432745491,
+          "cost": 20.0,
+          "proceeds": 94.7301,
+          "pnl": 74.7301,
+          "pnl_pct": 373.65
+        },
+        {
+          "ts": "2026-11-04T20:29:03Z",
+          "event": "exit",
+          "book": "loose",
+          "pool": "3sKjrTCuMVzwfMTYpqmwmGXbd27AGBVGR7qJotibUNMQ",
+          "mint": "j1uZqrtXGPv9qM4t9Q9SJHBpoLu5XNQkqALkQdW2PYQ",
+          "name": "Green Cat / SOL",
+          "reason": "no_volume",
+          "entry_t": "2026-11-04T19:31:15Z",
+          "hold_min": 57.8,
+          "entry_px": 2.8879792055316085e-05,
+          "exit_px": 8.980844940472412e-05,
+          "peak_px": 8.980844940472412e-05,
+          "cost": 20.0,
+          "proceeds": 48.6996,
+          "pnl": 28.6996,
+          "pnl_pct": 143.5
+        },
         {
           "ts": "2026-11-04T14:56:55Z",
           "event": "exit",
@@ -266,42 +319,6 @@
           "proceeds": 45.8242,
           "pnl": 25.8242,
           "pnl_pct": 129.12
-        },
-        {
-          "ts": "2026-11-04T14:54:51Z",
-          "event": "exit",
-          "book": "loose",
-          "pool": "EZw8FEKLG5Ah4NCRPiadawJjQsXmD4x6XahmRc5z3X5g",
-          "mint": "DDvBE1uKQwxSQMzaMLfRAtpqRqibvmqinuxmczthpump",
-          "name": "Chrome-Chan / SOL",
-          "reason": "trail_stop",
-          "entry_t": "2026-11-04T14:29:53Z",
-          "hold_min": 25.0,
-          "entry_px": 5.5128486455383867e-05,
-          "exit_px": 0.00013679636794024282,
-          "peak_px": 0.0002219722285989307,
-          "cost": 20.0,
-          "proceeds": 44.3981,
-          "pnl": 24.3981,
-          "pnl_pct": 121.99
-        },
-        {
-          "ts": "2026-11-04T17:57:19Z",
-          "event": "exit",
-          "book": "loose",
-          "pool": "F7oBT3FTePHsRfQyqBSfCEpoq531znM8G1CFQHDh2Gve",
-          "mint": "E9qnrNNjcH5sqkeAkUEEykXTMzGTMkQ1ys5ZzhbXPbv",
-          "name": "Donkey / SOL",
-          "reason": "trail_stop",
-          "entry_t": "2026-11-04T17:39:25Z",
-          "hold_min": 17.9,
-          "entry_px": 2.4411579061227652e-05,
-          "exit_px": 5.8423430262280556e-05,
-          "peak_px": 0.00010919855414128068,
-          "cost": 20.0,
-          "proceeds": 41.6821,
-          "pnl": 21.6821,
-          "pnl_pct": 108.41
         }
       ],
       "worst": [
@@ -362,50 +379,50 @@
       ]
     },
     "any": {
-      "pnl_usd": -86.38,
-      "pnl_pct": -8.64,
-      "open": 3,
+      "pnl_usd": -104.54,
+      "pnl_pct": -10.45,
+      "open": 0,
       "counts": {
-        "survivor": 29,
-        "trade": 29,
-        "not_checked_book_full": 512,
-        "kill:whale_wallet": 4,
+        "survivor": 61,
+        "trade": 61,
+        "not_checked_book_full": 896,
+        "kill:whale_wallet": 8,
         "kill:concentrated_top10": 1
       },
       "entries_holder_check_unknown": 0,
       "closed_trades": {
-        "n": 26,
-        "avg_pct": -18.53,
+        "n": 61,
+        "avg_pct": -8.57,
         "median_pct": -5.83,
-        "win_rate": 19.2
+        "win_rate": 27.9
       },
       "rules_on_all_its_survivors": {
-        "n": 26,
-        "avg_pct": -18.53,
+        "n": 61,
+        "avg_pct": -8.57,
         "median_pct": -5.83,
-        "win_rate": 19.2
+        "win_rate": 27.9
       },
       "random_hold_on_its_survivors": {
-        "n": 1450,
-        "avg_pct": -13.05,
+        "n": 3050,
+        "avg_pct": -10.22,
         "median_pct": -5.83,
-        "win_rate": 18.2
+        "win_rate": 26.2
       },
       "wallet_20": {
         "start": 20.0,
-        "end": 5.12,
-        "return_pct": -74.4,
-        "max_drawdown_pct": 79.4,
-        "trades": 29,
+        "end": 3.63,
+        "return_pct": -81.9,
+        "max_drawdown_pct": 84.0,
+        "trades": 61,
         "stake_pct": 25
       },
-      "dead_pool_exits": 3,
+      "dead_pool_exits": 4,
       "exit_reasons": {
-        "dead_pool": 3,
-        "stop_loss": 5,
-        "trail_stop": 1,
-        "volume_fade": 3,
-        "no_volume": 14
+        "dead_pool": 4,
+        "stop_loss": 10,
+        "no_volume": 38,
+        "trail_stop": 3,
+        "volume_fade": 6
       },
       "best": [
         {
@@ -427,6 +444,24 @@
           "pnl_pct": 114.23
         },
         {
+          "ts": "2026-11-04T21:15:24Z",
+          "event": "exit",
+          "book": "any",
+          "pool": "9fqLisfEd6Epbhb2VkfKAVVBin3FGuNX66qJwaEdcf3e",
+          "mint": "DkcGiWBAQkUWkdDQWYBVc8RfLvm9tfMatcghXaBv5u2A",
+          "name": "Aren / SOL",
+          "reason": "trail_stop",
+          "entry_t": "2026-11-04T21:02:14Z",
+          "hold_min": 13.2,
+          "entry_px": 0.00024290502004465183,
+          "exit_px": 0.0005493997997055421,
+          "peak_px": 0.0008277073311906173,
+          "cost": 20.0,
+          "proceeds": 42.1646,
+          "pnl": 22.1646,
+          "pnl_pct": 110.82
+        },
+        {
           "ts": "2026-11-04T15:08:55Z",
           "event": "exit",
           "book": "any",
@@ -443,24 +478,6 @@
           "proceeds": 37.1139,
           "pnl": 17.1139,
           "pnl_pct": 85.57
-        },
-        {
-          "ts": "2026-11-04T13:57:06Z",
-          "event": "exit",
-          "book": "any",
-          "pool": "AnkoGq4SqJcAUWaHon5fzNZektSCKrFftbBR7MDCrZ15",
-          "mint": "CaQR7CNrXvXaFQLC2ChWBZHpUed4EYfVVJxjR34ipair",
-          "name": "PAIRITY / SOL",
-          "reason": "volume_fade",
-          "entry_t": "2026-11-04T13:40:11Z",
-          "hold_min": 16.9,
-          "entry_px": 0.00011259120463166421,
-          "exit_px": 0.00013646818168814085,
-          "peak_px": 0.00013646818168814085,
-          "cost": 20.0,
-          "proceeds": 22.8272,
-          "pnl": 2.8272,
-          "pnl_pct": 14.14
         }
       ],
       "worst": [
@@ -501,46 +518,46 @@
           "pnl_pct": -100.0
         },
         {
-          "ts": "2026-11-04T15:38:40Z",
+          "ts": "2026-11-04T20:14:30Z",
           "event": "exit",
           "book": "any",
-          "pool": "EF67MyfdkCDoeFJsWJAmXDdwDtUmAQCneX84otmy8buS",
-          "mint": "4PXAvp77GVP3dRCeUzg5otgWqEWq24JgCq9xFwsU6Gyk",
-          "name": "UAV / SOL",
-          "reason": "stop_loss",
-          "entry_t": "2026-11-04T15:27:53Z",
-          "hold_min": 10.8,
-          "entry_px": 0.12631221718686994,
-          "exit_px": 1.632637101453883e-05,
-          "peak_px": 0.12631221718686994,
+          "pool": "E8ssXPTzkH5SDNvnaaxLRpjaMoC6JNdudKy2LTJfuNTB",
+          "mint": "2QSQpXgLZEHm2kYNcbFqQifpdMj6dvw3G8HpsoNuc8JK",
+          "name": "Impeach / SOL",
+          "reason": "dead_pool",
+          "entry_t": "2026-11-04T20:00:08Z",
+          "hold_min": 14.4,
+          "entry_px": 2.874893466368444e-05,
+          "exit_px": 0.0,
+          "peak_px": 3.649893002700647e-05,
           "cost": 20.0,
-          "proceeds": 0.0024,
-          "pnl": -19.9976,
-          "pnl_pct": -99.99
+          "proceeds": 0.0,
+          "pnl": -20.0,
+          "pnl_pct": -100.0
         }
       ]
     }
   },
   "all_launch_sample": {
-    "launches_sampled": 296,
-    "with_entry_price": 291,
+    "launches_sampled": 513,
+    "with_entry_price": 509,
     "random_exit_within_3h": {
-      "n": 14250,
-      "avg_pct": -10.87,
+      "n": 25150,
+      "avg_pct": -13.15,
       "median_pct": -5.83,
-      "win_rate": 22.1
+      "win_rate": 23.5
     },
     "hold_1h": {
-      "n": 285,
-      "avg_pct": -12.46,
+      "n": 503,
+      "avg_pct": -15.11,
       "median_pct": -5.83,
-      "win_rate": 18.9
+      "win_rate": 20.9
     },
     "hold_3h": {
-      "n": 285,
-      "avg_pct": -16.7,
+      "n": 503,
+      "avg_pct": -21.37,
       "median_pct": -5.83,
-      "win_rate": 18.6
+      "win_rate": 19.5
     }
   }
 }

@@ -172,6 +172,30 @@ def main():
         L.insert(5, f"- Copy: signals {out['copy']['signals']}, median delay from their buy to our paper buy {out['copy']['median_lag_s']}s, "
                     f"hot coins watched {out['copy']['hot_pools_added']}, trades read {out['copy']['trades_read']}, last wallet save {out['copy']['wallets_last_save']}")
         L = [l for l in L if not l.startswith("- All-launch baseline")]
+        # concentration (how much rides on the single best trade) and what the copy delay cost us
+        ent_by = {(t["book"], t["pool"], t["ts"]): t for t in ents}
+        out["copy"]["books"] = {}
+        for b in st["books"]:
+            ex = [t for t in trades if t.get("book") == b]
+            tot = sum(t["pnl"] for t in ex); best = max(ex, key=lambda t: t["pnl"], default=None)
+            pairs = [(ent_by.get((b, t["pool"], t.get("entry_t"))), t) for t in ex]
+            pairs = [(e, t) for e, t in pairs if e and e.get("lead_px") and e.get("entry_px_with_slip")]
+            prem = [100 * (e["entry_px_with_slip"] / e["lead_px"] - 1) for e, _ in pairs]
+            mlag = statistics.median([e["lag_s"] for e, _ in pairs]) if pairs else None
+            fast = [t["pnl_pct"] for e, t in pairs if e["lag_s"] <= mlag] if pairs else []
+            slow = [t["pnl_pct"] for e, t in pairs if e["lag_s"] > mlag] if pairs else []
+            c = {"closed": len(ex), "pnl_closed_usd": round(tot, 2),
+                 "best_trade_usd": round(best["pnl"], 2) if best else None, "best_trade_name": best["name"] if best else None,
+                 "pnl_without_best_usd": round(tot - best["pnl"], 2) if best else None,
+                 "median_price_vs_leader_pct": round(statistics.median(prem), 1) if prem else None,
+                 "share_paid_more_than_leader": round(sum(x > 0 for x in prem) / len(prem), 2) if prem else None,
+                 "median_lag_s": mlag,
+                 "avg_pnl_pct_faster_half": round(statistics.mean(fast), 1) if fast else None,
+                 "avg_pnl_pct_slower_half": round(statistics.mean(slow), 1) if slow else None}
+            out["copy"]["books"][b] = c
+            L.insert(6, f"- {b}: closed {c['closed']}, closed P&L ${c['pnl_closed_usd']}, best trade ${c['best_trade_usd']} ({c['best_trade_name']}), "
+                        f"P&L without it ${c['pnl_without_best_usd']}; our price vs the copied wallet's: median {c['median_price_vs_leader_pct']}% "
+                        f"(paid more on {c['share_paid_more_than_leader']} of trades); avg return faster half {c['avg_pnl_pct_faster_half']}% vs slower half {c['avg_pnl_pct_slower_half']}% (split at {c['median_lag_s']}s)")
         with open(os.path.join(D, "summary.json"), "w") as fh: json.dump(out, fh, indent=2)
     for b, r in out["books"].items():
         kills = {k[5:]: v for k, v in r["counts"].items() if k.startswith("kill:")}
